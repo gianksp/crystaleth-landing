@@ -1,4 +1,4 @@
-![](https://i.ibb.co/rcvGH7D/Logo-2.png)
+![](https://i.ibb.co/8BhjGp1/Logo-3.png)
 
 ### Overview
 ** CrystalEth.finance ** is a descentralized app built on [Moralis](https://moralis.io/) that leverages the Ethereum network to allow descentralized stake based eligibility to yield rewards.
