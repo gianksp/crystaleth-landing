@@ -1,17 +1,6 @@
 const Data = {
   menuItems: [
-    {
-      name: "Platform",
-      path: "/",
-    },
-    {
-      name: "Documentation",
-      path: "/documentation",
-    },
-    {
-      name: "Team",
-      path: "/team",
-    },
+
     // {
     //   name: "Home",
     //   path: "/",

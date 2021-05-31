@@ -7,23 +7,23 @@ export default {
   services: [
     {
       icon: serviceIcon1,
-      title: "ICO Finance",
-      body: "The highly the not having with lively Our up with.",
+      title: "CRY Token",
+      body: "Native platform token that rewards users staking it",
     },
     {
       icon: serviceIcon2,
-      title: "Blockchain",
-      body: "The highly the not having with lively Our up with.",
+      title: "Automated Yield",
+      body: "Smart contract driven investment strategy",
     },
     {
       icon: serviceIcon3,
-      title: "Market News",
-      body: "The highly the not having with lively Our up with.",
+      title: "Modular",
+      body: "Customizable yield source and distribution strategy plugins",
     },
     {
       icon: serviceIcon4,
-      title: "Exchange Offer",
-      body: "The highly the not having with lively Our up with.",
+      title: "Transparent",
+      body: "Everything happens in blockchain",
     },
   ],
 };

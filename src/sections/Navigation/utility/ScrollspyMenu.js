@@ -39,6 +39,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           )}
         </li>
       ))}
+      <li key={100}>
+        <Link href='https://github.com/gianksp/crystaleth-app'>
+          <a>Github</a>
+        </Link>
+      </li>
       <li>
         <button className="nav__button" onClick={() => (location.href="http://app.crystaleth.finance")}>
           App

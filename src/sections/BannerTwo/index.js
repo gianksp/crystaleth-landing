@@ -21,6 +21,7 @@ import {FaGithub} from 'react-icons/fa'
 import keyIcon from 'assets/images/banners/banner-two/cryptik-banner-key-icon.svg';
 import watchIcon from 'assets/images/banners/banner-two/cryptik-banner-watch-icon.svg';
 import heartIcon from 'assets/images/banners/banner-two/cryptik-banner-heart-icon.svg';
+import modularIcon from 'assets/images/modular.svg';
 
 import BannerWrapper from "./banner.style";
 
@@ -239,24 +240,26 @@ const BannerTwo = () => {
           <Col className="lg-7 md-10 xs-12">
             <Box className="banner-content"> 
               <Heading>
-                The Future Of Savings <br/>
-                and Investing
+                The Modular Investment <br/>
+                Protocol
               </Heading>
               <Text as="span" className="description">
-                The old way of doing things doesn’t cut it anymore. With CrystalEth, 
-                you can use cryptocurrency to earn interest at up to 100% APY, leveraging
-                staking and liquidity pool from different networks, from a single place. 
-                There are no hidden fees, no minimum balances, and no reason to wait.
+                CrystalEth is an open source, fully descentralized protocol that leverages the Ethereum 
+                DeFi ecosystem to generate yield through modular investment plugins native to the platform.
+                
+                The yield is distributed to CRY Token stakeholders as hourly dividends and prize pools.
+
+                Get and stake CRY Token and receive hourly dividends in stablecoins (USDT).
               </Text>
 
               <Box className="coin-info">
                 <Box>
-                  <Image src={keyIcon} alt="crypto banner icon" />
-                  <Text>Easy</Text>
+                  <Image src={modularIcon} alt="crypto banner icon" />
+                  <Text>Modular</Text>
                 </Box>
                 <Box>
                   <Image src={watchIcon} alt="crypto banner icon" />
-                  <Text>Fast</Text>
+                  <Text>Scalable</Text>
                 </Box>
                 <Box>
                   <Image src={heartIcon} alt="crypto banner icon" />

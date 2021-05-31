@@ -35,22 +35,21 @@ const About = () => {
                                 <SectionTitle>
                                     <SectionBackground>
                                         <Heading as="h1">
-                                            Protecting investor with high security
+                                            Plugin based investments and yield distribution
                                         </Heading>
                                     </SectionBackground>
                                     
-                                    <Text>Intended village pay like…. Discipline would, interesting that I off easier bathroom covered project the away, man you their by a temple prisoners. Have as her of your of in many, searched had class. Had with one entire children away. Problem got boss.</Text>
+                                    <Text>Build your own investment plugins to generate yield from protocols such as Aave, Yearn and Compound and define how to distribute them across stakeholders. <br/>Currently built in for the Moralis Hackathon Plugins:</Text>
                                 </SectionTitle>  
 
                                 <Box className="about-list">
-                                    <Text as="span">75% Distributed to Community.</Text>
-                                    <Text as="span">13% Reserved Funding.</Text>
-                                    <Text as="span">9% Founders and Team Management.</Text>
+                                    <Text as="span">[Investment] Mock stablecoin</Text>
+                                    <Text as="span">[Distribution] Hourly dividend based on CRY Token stake</Text>
+                                    <Text as="span">[Distribution] Lottery pool based on CRY Token burn</Text>
                                 </Box>
 
                                 <Box className="about-btn-wrapper">
-                                    <Link href="#" ><a className="btn btn-fill"> <FaGooglePlay /> Google Play</a></Link>
-                                    <Link href="#"><a className="btn"><FaApple /> Apple Store</a></Link>
+                                    <Link href="http://app.crystaleth.finance" ><a className="btn btn-fill"> Participate</a></Link>
                                 </Box>
                             </Box>
                         </Col>

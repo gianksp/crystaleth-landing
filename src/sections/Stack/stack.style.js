@@ -22,6 +22,12 @@ const StackSectionWrapper = styled.div`
     }
   }
 
+  .image-tech {
+    // height: 90px;
+    // width: 100px !important;
+    max-height: 150px;
+  }
+
   @media only screen and (max-width: 568px) {
     .box.language-image a img{
       width: 85%;

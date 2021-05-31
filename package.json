@@ -18,7 +18,9 @@
     "firebase-deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.13.13",
     "@zeit/next-css": "^1.0.1",
+    "moralis": "0.0.25",
     "next": "9.3.2",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.7",
@@ -29,6 +31,7 @@
     "react-countup": "^4.3.3",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
+    "react-moralis": "^0.1.9",
     "react-particles-js": "^3.2.1",
     "react-scroll": "^1.7.16",
     "react-slick": "^0.26.1",

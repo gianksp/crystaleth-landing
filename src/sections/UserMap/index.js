@@ -7,7 +7,7 @@ import Heading from "reusecore/Heading";
 import Text from "reusecore/Text";
 import Image from "reusecore/Image";
 
-import UserMapImage from "assets/images/users-map.png";
+import Diagram from "assets/images/diagram.svg";
 import UserMapWrapper from "./userMap.style";
 
 const UserMap = () => {
@@ -18,7 +18,7 @@ const UserMap = () => {
           <Row>
             <Col className="sm-12 md-10 offset-md-1">
               <SectionTitle className="text-center">
-                <Heading>More than 3 Bilion worldwide use</Heading>
+                <Heading>How it works</Heading>
                 <Text>
                   Attention in when in just something bread not hundred well,
                   muff value emerge on the known officers. A parameters phase
@@ -30,7 +30,7 @@ const UserMap = () => {
           <Row>
             <Col className="md-12">
               <Box className="usermap-block">
-                <Image src={UserMapImage} alt="cryptik user map" />
+                <Image src={Diagram} alt="cryptik user map" />
               </Box>
             </Col>
           </Row>

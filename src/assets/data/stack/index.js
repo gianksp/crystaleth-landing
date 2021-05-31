@@ -1,35 +1,30 @@
 import githubLogo from "assets/images/languages/github.png";
-import javascriptLogo from "assets/images/languages/javascript.png";
-import pythonLogo from "assets/images/languages/python.png";
-import reactLogo from "assets/images/languages/react.png";
-import rubyLogo from "assets/images/languages/ruby.png";
+import moralis from "assets/images/moralis-tech.png";
+import ethereum from "assets/images/ethereum-tech.png";
+import chainlink from "assets/images/chainlink-tech.png";
+import covalent from "assets/images/covalent-logo.png";
 
 export default {
   stack: [
     {
-      name: "gihub",
-      url: "#",
-      imageSrc: githubLogo,
+      name: "moralis",
+      url: "https://moralis.io",
+      imageSrc: moralis,
     },
     {
-      name: "javascript",
-      url: "#",
-      imageSrc: javascriptLogo,
+      name: "ethereum",
+      url: "https://ethereum.org/en/",
+      imageSrc: ethereum,
     },
     {
-      name: "python",
-      url: "#",
-      imageSrc: pythonLogo,
+      name: "chainlink",
+      url: "https://chain.link/",
+      imageSrc: chainlink,
     },
     {
-      name: "reactjs",
-      url: "#",
-      imageSrc: reactLogo,
-    },
-    {
-      name: "ruby",
-      url: "#",
-      imageSrc: rubyLogo,
+      name: "covalent",
+      url: "https://www.covalenthq.com/",
+      imageSrc: covalent,
     },
   ],
 };

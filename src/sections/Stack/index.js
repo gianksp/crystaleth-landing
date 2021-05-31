@@ -19,10 +19,9 @@ const Stack = () => {
           <Row>
             <Col className="offset-lg-3 offset-md-1 lg-6 md-10  sm-12">
               <SectionTitle>
-                <Heading> Technology we use</Heading>
+                <Heading> Technologies we use</Heading>
                 <Text>
-                  Attention in when in just something bread not hundred well,
-                  muff value emerge on the known officers.
+                  Core technologies that power our protocol.
                 </Text>
               </SectionTitle>
             </Col>
@@ -33,7 +32,7 @@ const Stack = () => {
                 {data.stack.map((item, index) => (
                   <Link href={item.url} key={index}>
                     <a>
-                      <Image src={item.imageSrc} alt={item.name} />
+                      <Image src={item.imageSrc} alt={item.name} height={90} className="image-tech"/>
                     </a>
                   </Link>
                 ))}

@@ -1709,10 +1709,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2FCETH%2FLandingTemplate%2Fpages%2Findex.js!./":
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2FCETH%2FLandingTemplate%2Fpages%2Findex.js ***!
-  \**********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2Fcrystaleth-landing%2Fpages%2Findex.js!./":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2Fcrystaleth-landing%2Fpages%2Findex.js ***!
+  \******************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3125,7 +3125,7 @@ class Router {
       if (true) {
         const {
           isValidElementType
-        } = __webpack_require__(/*! react-is */ "./node_modules/next/node_modules/react-is/index.js");
+        } = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
 
         if (!isValidElementType(Component)) {
           throw new Error(`The default export is not a React Component in page: "${pathname}"`);
@@ -3647,262 +3647,6 @@ exports.ST = exports.SP && typeof performance.mark === 'function' && typeof perf
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
-
-
-/***/ }),
-
-/***/ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/next/node_modules/react-is/cjs/react-is.development.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/** @license React v16.8.6
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
-var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-
-function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' ||
-  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
-}
-
-/**
- * Forked from fbjs/warning:
- * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
- *
- * Only change is we use console.warn instead of console.error,
- * and do nothing when 'console' is not supported.
- * This really simplifies the code.
- * ---
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var lowPriorityWarning = function () {};
-
-{
-  var printWarning = function (format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.warn(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  lowPriorityWarning = function (condition, format) {
-    if (format === undefined) {
-      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-var lowPriorityWarning$1 = lowPriorityWarning;
-
-function typeOf(object) {
-  if (typeof object === 'object' && object !== null) {
-    var $$typeof = object.$$typeof;
-    switch ($$typeof) {
-      case REACT_ELEMENT_TYPE:
-        var type = object.type;
-
-        switch (type) {
-          case REACT_ASYNC_MODE_TYPE:
-          case REACT_CONCURRENT_MODE_TYPE:
-          case REACT_FRAGMENT_TYPE:
-          case REACT_PROFILER_TYPE:
-          case REACT_STRICT_MODE_TYPE:
-          case REACT_SUSPENSE_TYPE:
-            return type;
-          default:
-            var $$typeofType = type && type.$$typeof;
-
-            switch ($$typeofType) {
-              case REACT_CONTEXT_TYPE:
-              case REACT_FORWARD_REF_TYPE:
-              case REACT_PROVIDER_TYPE:
-                return $$typeofType;
-              default:
-                return $$typeof;
-            }
-        }
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
-      case REACT_PORTAL_TYPE:
-        return $$typeof;
-    }
-  }
-
-  return undefined;
-}
-
-// AsyncMode is deprecated along with isAsyncMode
-var AsyncMode = REACT_ASYNC_MODE_TYPE;
-var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-var ContextConsumer = REACT_CONTEXT_TYPE;
-var ContextProvider = REACT_PROVIDER_TYPE;
-var Element = REACT_ELEMENT_TYPE;
-var ForwardRef = REACT_FORWARD_REF_TYPE;
-var Fragment = REACT_FRAGMENT_TYPE;
-var Lazy = REACT_LAZY_TYPE;
-var Memo = REACT_MEMO_TYPE;
-var Portal = REACT_PORTAL_TYPE;
-var Profiler = REACT_PROFILER_TYPE;
-var StrictMode = REACT_STRICT_MODE_TYPE;
-var Suspense = REACT_SUSPENSE_TYPE;
-
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-
-// AsyncMode should be deprecated
-function isAsyncMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-    }
-  }
-  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-}
-function isConcurrentMode(object) {
-  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-}
-function isContextConsumer(object) {
-  return typeOf(object) === REACT_CONTEXT_TYPE;
-}
-function isContextProvider(object) {
-  return typeOf(object) === REACT_PROVIDER_TYPE;
-}
-function isElement(object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-function isForwardRef(object) {
-  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-}
-function isFragment(object) {
-  return typeOf(object) === REACT_FRAGMENT_TYPE;
-}
-function isLazy(object) {
-  return typeOf(object) === REACT_LAZY_TYPE;
-}
-function isMemo(object) {
-  return typeOf(object) === REACT_MEMO_TYPE;
-}
-function isPortal(object) {
-  return typeOf(object) === REACT_PORTAL_TYPE;
-}
-function isProfiler(object) {
-  return typeOf(object) === REACT_PROFILER_TYPE;
-}
-function isStrictMode(object) {
-  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-}
-function isSuspense(object) {
-  return typeOf(object) === REACT_SUSPENSE_TYPE;
-}
-
-exports.typeOf = typeOf;
-exports.AsyncMode = AsyncMode;
-exports.ConcurrentMode = ConcurrentMode;
-exports.ContextConsumer = ContextConsumer;
-exports.ContextProvider = ContextProvider;
-exports.Element = Element;
-exports.ForwardRef = ForwardRef;
-exports.Fragment = Fragment;
-exports.Lazy = Lazy;
-exports.Memo = Memo;
-exports.Portal = Portal;
-exports.Profiler = Profiler;
-exports.StrictMode = StrictMode;
-exports.Suspense = Suspense;
-exports.isValidElementType = isValidElementType;
-exports.isAsyncMode = isAsyncMode;
-exports.isConcurrentMode = isConcurrentMode;
-exports.isContextConsumer = isContextConsumer;
-exports.isContextProvider = isContextProvider;
-exports.isElement = isElement;
-exports.isForwardRef = isForwardRef;
-exports.isFragment = isFragment;
-exports.isLazy = isLazy;
-exports.isMemo = isMemo;
-exports.isPortal = isPortal;
-exports.isProfiler = isProfiler;
-exports.isStrictMode = isStrictMode;
-exports.isSuspense = isSuspense;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/next/node_modules/react-is/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/next/node_modules/react-is/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js");
-}
 
 
 /***/ }),
@@ -16233,7 +15977,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.8.6
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -16250,39 +15994,88 @@ if (true) {
   (function() {
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
 var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
 var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
 var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
 var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
 var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-// (unstable) APIs that have been removed. Can we remove the symbols?
-
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
 var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
 var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
 var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
 function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+  return typeof type === 'string' || typeof type === 'function' ||
+  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
 }
+
+/**
+ * Forked from fbjs/warning:
+ * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
+ *
+ * Only change is we use console.warn instead of console.error,
+ * and do nothing when 'console' is not supported.
+ * This really simplifies the code.
+ * ---
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var lowPriorityWarning = function () {};
+
+{
+  var printWarning = function (format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.warn(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  lowPriorityWarning = function (condition, format) {
+    if (format === undefined) {
+      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
+      }
+
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
+}
+
+var lowPriorityWarning$1 = lowPriorityWarning;
 
 function typeOf(object) {
   if (typeof object === 'object' && object !== null) {
     var $$typeof = object.$$typeof;
-
     switch ($$typeof) {
       case REACT_ELEMENT_TYPE:
         var type = object.type;
@@ -16295,32 +16088,29 @@ function typeOf(object) {
           case REACT_STRICT_MODE_TYPE:
           case REACT_SUSPENSE_TYPE:
             return type;
-
           default:
             var $$typeofType = type && type.$$typeof;
 
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
-              case REACT_LAZY_TYPE:
-              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
-
               default:
                 return $$typeof;
             }
-
         }
-
+      case REACT_LAZY_TYPE:
+      case REACT_MEMO_TYPE:
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }
   }
 
   return undefined;
-} // AsyncMode is deprecated along with isAsyncMode
+}
 
+// AsyncMode is deprecated along with isAsyncMode
 var AsyncMode = REACT_ASYNC_MODE_TYPE;
 var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
 var ContextConsumer = REACT_CONTEXT_TYPE;
@@ -16334,17 +16124,17 @@ var Portal = REACT_PORTAL_TYPE;
 var Profiler = REACT_PROFILER_TYPE;
 var StrictMode = REACT_STRICT_MODE_TYPE;
 var Suspense = REACT_SUSPENSE_TYPE;
-var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
 
+var hasWarnedAboutDeprecatedIsAsyncMode = false;
+
+// AsyncMode should be deprecated
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      hasWarnedAboutDeprecatedIsAsyncMode = true;
+      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
     }
   }
-
   return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
 }
 function isConcurrentMode(object) {
@@ -16384,6 +16174,7 @@ function isSuspense(object) {
   return typeOf(object) === REACT_SUSPENSE_TYPE;
 }
 
+exports.typeOf = typeOf;
 exports.AsyncMode = AsyncMode;
 exports.ConcurrentMode = ConcurrentMode;
 exports.ContextConsumer = ContextConsumer;
@@ -16397,6 +16188,7 @@ exports.Portal = Portal;
 exports.Profiler = Profiler;
 exports.StrictMode = StrictMode;
 exports.Suspense = Suspense;
+exports.isValidElementType = isValidElementType;
 exports.isAsyncMode = isAsyncMode;
 exports.isConcurrentMode = isConcurrentMode;
 exports.isContextConsumer = isContextConsumer;
@@ -16410,8 +16202,6 @@ exports.isPortal = isPortal;
 exports.isProfiler = isProfiler;
 exports.isStrictMode = isStrictMode;
 exports.isSuspense = isSuspense;
-exports.isValidElementType = isValidElementType;
-exports.typeOf = typeOf;
   })();
 }
 
@@ -20217,7 +20007,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_assets_images_fav_icon_png__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_src_assets_images_fav_icon_png__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _src_assets_theme_theme__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../src/assets/theme/theme */ "./src/assets/theme/theme.js");
 /* harmony import */ var _src_assets_theme__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../src/assets/theme */ "./src/assets/theme/index.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/pages/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -20331,53 +20121,18 @@ const Home = () => {
       lineNumber: 37,
       columnNumber: 7
     }
-  }), __jsx(_src_sections_Awards__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_src_sections_UserMap__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38,
       columnNumber: 7
     }
-  }), __jsx(_src_sections_UserMap__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 7
-    }
-  }), __jsx(_src_sections_Wallet__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 7
-    }
-  }), __jsx(_src_sections_Statistics__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 7
-    }
-  }), __jsx(_src_sections_Faq__WEBPACK_IMPORTED_MODULE_13__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 8
-    }
   }), __jsx(_src_sections_Stack__WEBPACK_IMPORTED_MODULE_12__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 7
-    }
-  }), __jsx(_src_sections_Footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 40,
       columnNumber: 7
     }
   }));
@@ -20399,7 +20154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/assets/data/awards/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/assets/data/awards/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -20507,7 +20262,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/assets/data/footer/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/assets/data/footer/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -20651,20 +20406,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   services: [{
     icon: _images_service_service_icon_1_svg__WEBPACK_IMPORTED_MODULE_0___default.a,
-    title: "ICO Finance",
-    body: "The highly the not having with lively Our up with."
+    title: "CRY Token",
+    body: "Native platform token that rewards users staking it"
   }, {
     icon: _images_service_service_icon_2_svg__WEBPACK_IMPORTED_MODULE_1___default.a,
-    title: "Blockchain",
-    body: "The highly the not having with lively Our up with."
+    title: "Automated Yield",
+    body: "Smart contract driven investment strategy"
   }, {
     icon: _images_service_service_icon_3_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
-    title: "Market News",
-    body: "The highly the not having with lively Our up with."
+    title: "Modular",
+    body: "Customizable yield source and distribution strategy plugins"
   }, {
     icon: _images_service_service_icon_4_svg__WEBPACK_IMPORTED_MODULE_3___default.a,
-    title: "Exchange Offer",
-    body: "The highly the not having with lively Our up with."
+    title: "Transparent",
+    body: "Everything happens in blockchain"
   }]
 });
 
@@ -20681,14 +20436,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_languages_github_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../images/languages/github.png */ "./src/assets/images/languages/github.png");
 /* harmony import */ var _images_languages_github_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_images_languages_github_png__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _images_languages_javascript_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/languages/javascript.png */ "./src/assets/images/languages/javascript.png");
-/* harmony import */ var _images_languages_javascript_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_languages_javascript_png__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _images_languages_python_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/languages/python.png */ "./src/assets/images/languages/python.png");
-/* harmony import */ var _images_languages_python_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_languages_python_png__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _images_languages_react_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/languages/react.png */ "./src/assets/images/languages/react.png");
-/* harmony import */ var _images_languages_react_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_languages_react_png__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _images_languages_ruby_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/languages/ruby.png */ "./src/assets/images/languages/ruby.png");
-/* harmony import */ var _images_languages_ruby_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_languages_ruby_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _images_moralis_tech_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/moralis-tech.png */ "./src/assets/images/moralis-tech.png");
+/* harmony import */ var _images_moralis_tech_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_moralis_tech_png__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_ethereum_tech_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/ethereum-tech.png */ "./src/assets/images/ethereum-tech.png");
+/* harmony import */ var _images_ethereum_tech_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_ethereum_tech_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_chainlink_tech_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/chainlink-tech.png */ "./src/assets/images/chainlink-tech.png");
+/* harmony import */ var _images_chainlink_tech_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_chainlink_tech_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _images_covalent_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/covalent-logo.png */ "./src/assets/images/covalent-logo.png");
+/* harmony import */ var _images_covalent_logo_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_covalent_logo_png__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -20696,25 +20451,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   stack: [{
-    name: "gihub",
-    url: "#",
-    imageSrc: _images_languages_github_png__WEBPACK_IMPORTED_MODULE_0___default.a
+    name: "moralis",
+    url: "https://moralis.io",
+    imageSrc: _images_moralis_tech_png__WEBPACK_IMPORTED_MODULE_1___default.a
   }, {
-    name: "javascript",
-    url: "#",
-    imageSrc: _images_languages_javascript_png__WEBPACK_IMPORTED_MODULE_1___default.a
+    name: "ethereum",
+    url: "https://ethereum.org/en/",
+    imageSrc: _images_ethereum_tech_png__WEBPACK_IMPORTED_MODULE_2___default.a
   }, {
-    name: "python",
-    url: "#",
-    imageSrc: _images_languages_python_png__WEBPACK_IMPORTED_MODULE_2___default.a
+    name: "chainlink",
+    url: "https://chain.link/",
+    imageSrc: _images_chainlink_tech_png__WEBPACK_IMPORTED_MODULE_3___default.a
   }, {
-    name: "reactjs",
-    url: "#",
-    imageSrc: _images_languages_react_png__WEBPACK_IMPORTED_MODULE_3___default.a
-  }, {
-    name: "ruby",
-    url: "#",
-    imageSrc: _images_languages_ruby_png__WEBPACK_IMPORTED_MODULE_4___default.a
+    name: "covalent",
+    url: "https://www.covalenthq.com/",
+    imageSrc: _images_covalent_logo_png__WEBPACK_IMPORTED_MODULE_4___default.a
   }]
 });
 
@@ -20815,6 +20566,50 @@ module.exports = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5v
 
 /***/ }),
 
+/***/ "./src/assets/images/chainlink-tech.png":
+/*!**********************************************!*\
+  !*** ./src/assets/images/chainlink-tech.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/chainlink-tech-9cad1731cfa4d7f431a8ef40bbea8c4c.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/covalent-logo.png":
+/*!*********************************************!*\
+  !*** ./src/assets/images/covalent-logo.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "./src/assets/images/diagram.svg":
+/*!***************************************!*\
+  !*** ./src/assets/images/diagram.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/diagram-39f3658166b4f7262d6730460c1b50ae.svg";
+
+/***/ }),
+
+/***/ "./src/assets/images/ethereum-tech.png":
+/*!*********************************************!*\
+  !*** ./src/assets/images/ethereum-tech.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/ethereum-tech-b4f0b030dff2c7d85e1a7995265b3391.png";
+
+/***/ }),
+
 /***/ "./src/assets/images/faq-image.png":
 /*!*****************************************!*\
   !*** ./src/assets/images/faq-image.png ***!
@@ -20859,6 +20654,17 @@ module.exports = "/_next/static/images/funds-bg-1bceee63f1933088eb08cb46dc08e144
 
 /***/ }),
 
+/***/ "./src/assets/images/icon_crystal.svg":
+/*!********************************************!*\
+  !*** ./src/assets/images/icon_crystal.svg ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDU3LjMgNjcuMTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU3LjMgNjcuMTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyLjQ0NDc7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQoJLnN0MntjbGlwLXBhdGg6dXJsKCNTVkdJRF8yXyk7fQoJLnN0M3tjbGlwLXBhdGg6dXJsKCNTVkdJRF8yXyk7ZmlsbDp1cmwoI1NWR0lEXzNfKTt9Cgkuc3Q0e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzJfKTtmaWxsOiNGRkZGRkY7c3Ryb2tlOiNCMjlGRjc7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NXtjbGlwLXBhdGg6dXJsKCNTVkdJRF8yXyk7ZmlsbDojQjI5RkY3O30KCS5zdDZ7ZmlsbDojQzVBNUY5O30KCS5zdDd7ZmlsbDojRjRBNUY4O30KCS5zdDh7ZmlsbDojQjY5QkZDO30KCS5zdDl7ZmlsbDojOTY3Q0ZEO30KCS5zdDEwe2ZpbGw6IzU5NkZDMzt9Cgkuc3QxMXtmaWxsOnVybCgjU1ZHSURfNF8pO3N0cm9rZTp1cmwoI1NWR0lEXzVfKTtzdHJva2Utd2lkdGg6MjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxMntmaWxsOiNFOUFCRjQ7fQoJLnN0MTN7ZmlsbDojQjI5RkY3O30KCS5zdDE0e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzdfKTtmaWxsOm5vbmU7fQoJLnN0MTV7b3BhY2l0eTowLjE3O30KCS5zdDE2e2ZpbGw6I0ZGRkZGRjtzdHJva2U6Izc5QUNGNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxN3tmaWxsOnVybCgjU1ZHSURfOF8pO30KCS5zdDE4e2ZpbGw6dXJsKCNTVkdJRF85Xyk7fQoJLnN0MTl7ZmlsbDp1cmwoI1NWR0lEXzEwXyk7fQoJLnN0MjB7ZmlsbDp1cmwoI1NWR0lEXzExXyk7fQoJLnN0MjF7ZmlsbDp1cmwoI1NWR0lEXzEyXyk7fQoJLnN0MjJ7ZmlsbDp1cmwoI1NWR0lEXzEzXyk7fQoJLnN0MjN7ZmlsbDp1cmwoI1NWR0lEXzE0Xyk7fQoJLnN0MjR7ZmlsbDp1cmwoI1NWR0lEXzE1Xyk7fQoJLnN0MjV7ZmlsbDp1cmwoI1NWR0lEXzE2Xyk7fQoJLnN0MjZ7ZmlsbDp1cmwoI1NWR0lEXzE3Xyk7fQoJLnN0Mjd7ZmlsbDp1cmwoI1NWR0lEXzE4Xyk7fQoJLnN0Mjh7ZmlsbDp1cmwoI1NWR0lEXzE5Xyk7fQoJLnN0Mjl7ZmlsbDojQ0M5RkMzO30KCS5zdDMwe2ZpbGw6I0Y5OUJFMzt9Cgkuc3QzMXtmaWxsOiNEREJDRDc7fQoJLnN0MzJ7ZmlsbDojNzlBQ0Y3O30KCS5zdDMze2ZpbGw6bm9uZTtzdHJva2U6Izc5QUNGNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QzNHtmaWxsOiNENUQ2RkM7fQoJLnN0MzV7ZmlsbDojODU5NURFO30KCS5zdDM2e2ZpbGw6IzVDNzFCRTt9Cgkuc3QzN3tmaWxsOiNCM0E5Rjg7fQoJLnN0Mzh7ZmlsbDpub25lO30KCS5zdDM5e2ZpbGw6I0YxRTRGMjt9Cgkuc3Q0MHtmaWxsOiNEQkI5RkM7fQoJLnN0NDF7ZmlsbDojRTdEOUY5O30KCS5zdDQye2ZpbGw6I0U4QzREOTt9Cgkuc3Q0M3tmaWxsOiNFRkMyREU7fQoJLnN0NDR7ZmlsbDojRjBDOUY0O30KCS5zdDQ1e2ZpbGw6I0Y3RTJFRjt9Cgkuc3Q0NntmaWxsOiNGRkRFRjQ7fQoJLnN0NDd7ZmlsbDojRjVGMEZDO30KCS5zdDQ4e2ZpbGw6I0ZCRjVGQzt9Cgkuc3Q0OXtmaWxsOm5vbmU7c3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NTB7ZmlsbDojRjdEMEVDO30KCS5zdDUxe2NsaXAtcGF0aDp1cmwoI1NWR0lEXzI1Xyk7fQoJLnN0NTJ7Y2xpcC1wYXRoOnVybCgjU1ZHSURfMjVfKTtmaWxsOm5vbmU7fQoJLnN0NTN7ZmlsbDojQUZBRkFGO30KCS5zdDU0e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzI3Xyk7fQoJLnN0NTV7ZmlsbDojMDAwMEVBO30KCS5zdDU2e2ZpbGw6IzVFMjdGOTt9Cgkuc3Q1N3tmaWxsOiNFOERDRkU7fQoJLnN0NTh7ZmlsbDojQ0FBN0ZCO30KCS5zdDU5e2ZpbGw6I0IwNjFGQjt9Cgkuc3Q2MHtmaWxsOiNGRkIzRkI7fQoJLnN0NjF7ZmlsbDojRTBDMEZCO30KCS5zdDYye2ZpbGw6I0NGNDRGOTt9Cgkuc3Q2M3tmaWxsOiNGNkU3RkU7fQoJLnN0NjR7ZmlsbDojQ0M3OUY1O30KCS5zdDY1e2NsaXAtcGF0aDp1cmwoI1NWR0lEXzI5Xyk7fQoJLnN0NjZ7ZmlsbDpub25lO3N0cm9rZTojQUZBRkFGO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDY3e2ZpbGw6I0M1QTVGOTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q2OHtmaWxsOiNGRjk5RkY7fQoJLnN0Njl7ZmlsbDojRkZDQ0NDO30KCS5zdDcwe2ZpbGw6I0M0QzRDNDt9Cgkuc3Q3MXtmaWxsOiM5OTk1OEM7fQoJLnN0NzJ7ZmlsbDojQThBNTlFO30KCS5zdDcze2ZpbGw6IzYwNUQ1ODt9Cgkuc3Q3NHtmaWxsOiM3MDZDNjM7fQoJLnN0NzV7b3BhY2l0eTowLjY7fQoJLnN0NzZ7b3BhY2l0eTowLjY1O30KCS5zdDc3e2ZpbGw6IzUxNEU0Nzt9Cgkuc3Q3OHtmaWxsOiM3Qzc5NzI7fQoJLnN0Nzl7ZmlsbDojRUVDMUQ5O30KCS5zdDgwe2ZpbGw6dXJsKCNTVkdJRF8zMl8pO30KCS5zdDgxe2ZpbGw6I0Q0RDRGRjt9Cgkuc3Q4MntmaWxsOiNGM0UyRjI7fQoJLnN0ODN7ZmlsbDojRTlEN0ZCO30KCS5zdDg0e2ZpbGw6I0Y1RUZGQzt9Cgkuc3Q4NXtmaWxsOiNGQkY0RkM7fQoJLnN0ODZ7ZmlsbDojRjdCRURGO30KCS5zdDg3e2ZpbGw6I0ZBRTBFRjt9Cgkuc3Q4OHtmaWxsOiNFMUI1RkY7fQoJLnN0ODl7ZmlsbDojQTY4RUY1O30KCS5zdDkwe2ZpbGw6I0ZGREJGNDt9Cgkuc3Q5MXtmaWxsOiMzRTdDRkQ7fQoJLnN0OTJ7ZmlsbDojNzlDNkZGO30KCS5zdDkze2ZpbGw6IzZCODVGMjt9Cgkuc3Q5NHtmaWxsOiM2NUZGRkQ7fQoJLnN0OTV7ZmlsbDojMDBEMjlEO30KCS5zdDk2e2ZpbGw6IzAwRjlFODt9Cgkuc3Q5N3tmaWxsOiMwMEIxQUI7fQoJLnN0OTh7ZmlsbDojNkVCRTAwO30KCS5zdDk5e2ZpbGw6I0I4RDYwMDt9Cgkuc3QxMDB7ZmlsbDojRkJGRkYyO30KCS5zdDEwMXtmaWxsOiM0M0I4MUM7fQoJLnN0MTAye2ZpbGw6I0Y0QkFDQTt9Cgkuc3QxMDN7ZmlsbDojODE1RUFGO30KCS5zdDEwNHtmaWxsOiNCOThBQjk7fQoJLnN0MTA1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC42NjY3O3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEwNntmaWxsOiNGQ0EyRkY7fQoJLnN0MTA3e2ZpbGw6I0VFMUVGRjt9Cgkuc3QxMDh7ZmlsbDojODkwNURDO30KCS5zdDEwOXtmaWxsOiNGRjFCOTc7fQoJLnN0MTEwe2ZpbGw6IzQ0MDdDNzt9Cgkuc3QxMTF7ZmlsbDojRUYxMkY0O30KCS5zdDExMntmaWxsOiNGQjY0RTE7fQoJLnN0MTEze2ZpbGw6Izg0NzhGQjt9Cgkuc3QxMTR7ZmlsbDojRkREMkZGO30KCS5zdDExNXtmaWxsOiNFNTk2RkY7fQoJLnN0MTE2e2ZpbGw6Izg2NzVFMjt9Cgkuc3QxMTd7ZmlsbDojRENGNDZDO30KCS5zdDExOHtmaWxsOiNCRkU1MzI7fQoJLnN0MTE5e2ZpbGw6IzM5RDE3ODt9Cgkuc3QxMjB7ZmlsbDojM0ZCRDQ4O30KCS5zdDEyMXtmaWxsOiNDOTc4RDA7fQoJLnN0MTIye2ZpbGw6I0M5QzlDOTt9Cgkuc3QxMjN7Y2xpcC1wYXRoOnVybCgjU1ZHSURfMzRfKTt9Cgkuc3QxMjR7Y2xpcC1wYXRoOnVybCgjU1ZHSURfMzZfKTt9Cgkuc3QxMjV7b3BhY2l0eTowLjQxO30KCS5zdDEyNntmaWxsOiM0RDRENEQ7fQoJLnN0MTI3e2ZpbGw6IzFBMUExQTt9Cgkuc3QxMjh7ZmlsbDojNjY2NjY2O30KCS5zdDEyOXtmaWxsOiMzMzMzMzM7fQoJLnN0MTMwe2ZpbGw6I0ZGRkZGRjtzdHJva2U6I0IyOUZGNztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxMzF7ZmlsbDojOUI1MjE2O30KCS5zdDEzMntmaWxsOiM5MzkzOTM7fQoJLnN0MTMze2ZpbGw6I0I3QjdCNzt9Cgkuc3QxMzR7ZmlsdGVyOnVybCgjQWRvYmVfT3BhY2l0eU1hc2tGaWx0ZXIpO30KCS5zdDEzNXtvcGFjaXR5OjAuNzU7bWFzazp1cmwoI1NWR0lEXzM3Xyk7fQo8L3N0eWxlPgo8ZyBpZD0iTGF5ZXJfMiI+CjwvZz4KPGcgaWQ9IkxheWVyXzEiPgoJPGc+CgkJPHBvbHlnb24gY2xhc3M9InN0ODIiIHBvaW50cz0iMTQuODIsOC4xIDYuODIsMzAuODQgMjUuODksMzIuMzUgMjguMSwxNi41NSAyMy43LDguMDQgCQkiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3Q4IiBwb2ludHM9IjYuODIsMzAuODQgMTQuNzcsNTQuNDQgMjkuMzgsNTkuMTEgMzAuOTIsNDkuNTQgMjUuODksMzIuMzUgCQkiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3Q3OSIgcG9pbnRzPSIyMy43LDguMDQgNDAuNzksMTMuMzIgNTAuNDQsMzcuMjMgMjcuNiwyMC4wNyAyOC4xLDE2LjU1IAkJIi8+CgkJPHBvbHlnb24gY2xhc3M9InN0MTAiIHBvaW50cz0iMjkuMzEsNDMuOTcgNDQuNzUsNDkuOTIgNDMuNCw1MS4yOCAyOS4zOCw1OS4xMSAzMC45Miw0OS41NCAJCSIvPgoJCTxwb2x5Z29uIGNsYXNzPSJzdDciIHBvaW50cz0iNTAuNDgsMzcuMzEgNDQuNzUsNDkuOTIgMjkuMzEsNDMuOTcgMjUuODksMzIuMzUgMjcuNiwyMC4wNyAJCSIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo="
+
+/***/ }),
+
 /***/ "./src/assets/images/languages/github.png":
 /*!************************************************!*\
   !*** ./src/assets/images/languages/github.png ***!
@@ -20870,50 +20676,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABECAYAAADT
 
 /***/ }),
 
-/***/ "./src/assets/images/languages/javascript.png":
-/*!****************************************************!*\
-  !*** ./src/assets/images/languages/javascript.png ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
-/***/ "./src/assets/images/languages/python.png":
-/*!************************************************!*\
-  !*** ./src/assets/images/languages/python.png ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
-/***/ "./src/assets/images/languages/react.png":
-/*!***********************************************!*\
-  !*** ./src/assets/images/languages/react.png ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
-/***/ "./src/assets/images/languages/ruby.png":
-/*!**********************************************!*\
-  !*** ./src/assets/images/languages/ruby.png ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABFCAYAAAAYePsUAAAABHNCSVQICAgIfAhkiAAAEepJREFUeF7d2wm0ZUdVBuB/y+A8oRJBwCkKIs4jzjhPC1EJUURCxMxICAYQjCRPFELo7tdIkibiAoMDGgdUjKAIRlARRBCEMKgEg510ExyCAxKGcn2Pql43N3fu7tBYa51337333HOq/tr73//eVafy/7C11j4syccm+bgkH53knVV13bpDrXV/cCyd31r7qCTHJfnUJJ+R5E4dkPcluTHJ25L8c5JrqurfR99ba8btt5+e5J5JvrS/v7yqXj3OO+bB6QO5a5J7dQAM6LOSfGaST0jy30kOJHlVkr9L8vok11bVOyfAYEmfnORzk3xtki9L8oVJPi3Jx/TzDiZ5WlX9/IcSOAb2OUkenORbknxKkn9I8pdJ/iLJG6oKOIdaa+0jk9wtyRcl+fJ+AObOSeYZxE1J/iTJj1bVf7jYMWU5nSt+IMkZSd6a5FeTvLyq/mfCCm5bVe+dAuO2Sb4hyb27i9yjuwy+Wae9IclPVNWLjilwWmvflOSnknzHxGjen+S1SZ7rqKq/nzXS1trtknxnkvt2tzk+ic/Wbe9I8vSq+pljApzW2hckeUySE5OwgFntPUkuT3Jqd6vLkvjsxUleluTNVfUuP2ytucbndZDuk+QruhVxz2WNRf5Zd62DHzS3aq3dJckjk/x4D7uLOv6v3aJYzulJnjpx8v8m+afOPy/pbug9oIxPOBeNvjEJ68RDiHxee3OSc6vqebc6OK010eG0JI9IAqBlbcdqquqU1ppQzVpwykwPo2mSvDHJXyUB1iur6l86WKxHpBOxWBWOIgFuP3ExIf+ZqXrUrQpOaw0v8OevWYbIxPd4QJQyYG71tDV+25L4vfD+5x2sV41o1HUSSxpW9cVdN73iHXv33u9WAae1hiB/OskDp2Zp2ThZzbOq6rTWGqHHavDJpg3BU8qv6WCRAq8RDTtXuQeOuscNe/a84KiD01pDtE/uumPd+xFm35bkTRtYzTSA7+6qmYtRzv/YyfwlVXXDLLTX7ezKM9aF2LlJHpuEKNuk7e2kTSG/sCvccR0uwxLGIWVgaTiHKASC1AHBvqW/359EVMM9ohr+wzksm4L+m85Vxx/Ys+f4owJOJ90LCKo13WgSQMSImwxMVNtKAgCHCMWqgAAAilmEIhyBMvIo47tNko/o4VzKQTpQy4hZQPjEDhSXFQmF87MObG/fdMTBaa19fBL5ySmHAQwp/5SqOq+T5uP6ILkCABzC+391KwAAS6CIWRlrwE1A+OwOwh16cjltwSzwdUl+sqckhOSF129vP/WIgdM1BdPELw/aUKHqOG6gY85jJVX1/n5t4Xa4g3IE8mQJAHAI7xJJfVjHjVngJUme2K1KNLz7ge3txxwRcHrnmSiOgPw8pbuMd7jLVlVd2FoDhjAr22YNP9JBwA/udcfuLsuuueh79/vj7k6sj/s69r999+6HHzY4PVk0gyQ9BeommzT1l8dW1b7W2ocneRjfT/I9xG6Sv07CZY9Um+VOLIj7XXPd7t2nHRY4rTVAKBZxA0Jqlfxlls8LpY+oque01pAnjqGLRB/m/pR+Dzx2pBp3uhi/9NoOdxri9E0Hd+06aWNwOjBqJS76JRu6ktkTXU6rquf3KPekbjVAEKblU9/cB/CCJKzqcBt3ci2lERTAlc6ZuOjrDm5vP3AjcLqa/PoODCLcxJUMXPR5aI8Sn9Q5C7dMNrWchyR5fpLnddc9HHCGOwFE/nW/Pg7uNNprr7voogesDc5E7WS7R4tNXIlWYRGqe8Iogn16ku+eMWq6AzAnKCUk+cXDLNLtlEN7VFUqnXSncftXX7t37/3XAqcTpU7y00Ulx2URQhLIpMl4teF9Sb56wY9omu9VG+71FqF7k4bDfifJ2T3cP6qT/uS1dsh//zqW011JB3+hz/RawPa7k+5CJ2D+LclXdYtB6osaUSgaKoo9vr+ue3+DNhms9W+T3D8J65+u7XD3lx7ctWt1t+oVu1/pM70Jx1Czv5vk0T0BRLJCJzW7rBmY9EANRoGd1F9UsJp1PVLh0iTn94I7TfaVc9z4qmsvvHA1cFprqmlMX/FbqF23/Wcvc5p1CphQZIEGumoTYUj8X05ikvRl1cadlCeQPXEpIaajZjXnvvCGra0Tl5pmJ2D6Qr607my5OWCQ7c/2nuAsswbwdRoStxxDFCrC/8aK8mG4k6TSqoKa0ix3Gn3hwle+dWtreShvrVkA+7W+drRuZBqm/HN9IMI2s95U6boerrAq+adJVO6WNWtQ3InVUvLGMsudxnXw4nOv3to6eaHldHf6pe4G64gvN6B6dYqVWHoVIfDNOknh9MCZvLUsLvHwrp4XjcH5L+2JMHcm9CS0ixpu/M2rtrZOn3vhHp1k14tMcPomeMHsikiiy8t7dq5DBsSVlrrygp5zEQUrORzuQMyy81ltuJNivvPUoXEVsbmoKZY9O1tbZ8/saM+y6Q8zL99Y5k5mxUWvSsLS+Hbr5QaW8v29c+qzVhDUXVjisuvOGsRO5t5zLVwmNM9qw50U9NV0ntHzv2VuuLP6UFXnzgNHTUSy94NL1pQAomBN1F3Rq/v4RGe4laLUEGyEHEBU4r6uL+bbFOBefjO5PLJoACPfspJx9yS/P4PDTJZUQ1ZvjJJYVclVmtWKfVX1+HngsBruZP15Vqe5DlCsC1mq9SrEq7tIAYCKX+QuQq/B+/8VPdEEHKsh360dIX2AAkpEXMZv8i3u8gf4oS8Fj4EDz5q36PTKHvLpqVUj7aHdFrcAp2fbMlU6AoFZLRyiDyh8nqWQ4ZZinSs3El5/qA9Ubdeg+T1QgKYBxdo3MAGl/suiDOjzuwvL9FnbAGqWrpJvyaqFZf3kMmNt3D1Yvcl1TbnYoug0bU0mfXdV7ZkFjizbnhc3YQFqK6puBoxTWIoB64z8Sh3nAf11VACv7GvfMvffmtgDM9kR6YP9NLQLoK7pQIkwY63boGw/GUBNRjr9+76eEtg64jfT7qTvoto6TYrxJEW3m4HTq3pP6GZt4d6yhoErTdIVI/oABW/4jusJ1ZONpriouxZ/X+YmyFOWzhJV/JQyWBRBxoqG67EE0YaLmBwR0c4MpMuNuZO8zRKLiVXMWtWdRv/x5AVVdfk0OArXz+7FJWFPtHpjjzoAAIrsmcqV5zh/ujF5NRLrTEiaol2npkxnXN2BYqGWgUUQ1kzEAUrUA5TIZdFQOKeYudee/p3/nbduk8M9rqqumAaHCbMYALgxv1WZwwnf1TnlW5fMxvWdOwyGy7C6TbUNoKx2DjJnXdxRSiLS4Sf3MNt2a+BBfV0nOk2Dx1seWVVXToPz7V0/jF0MosHJ3S2ERnJ9WUbO/egaRO436+ZQ82baZLEirs39BlDXV9W7+2qFviHoTdxp3JdrPqyqXjwNDhWrZiL6IDczwLUkfW5IMS+T/wphY7UTf22SxS9zBX2zyknj0CT7u3BlpehAnWjTBnQ17ZcdAqeT8e5er0ViIglyE0WIPfJbWKRw5zUgImkWo5NIcR2+WXVAOIi7oQBcQzIMnQUw3LhpswPjZFtuJ8FRWyHY7GrgtyIAcrYRQDrAlKUGlOm86KOMKXyLMrTM4fDNrMHhIHWZ3+47P6lZUdMkmBjLOIKFKsC6myXH/US6h1TV1ZPg4BMMT60qerMaM0TXID0FIp2w3GvxfVb7ox49RAm/27Q0MX1tk4UoWeTv9TKnrbTKtviNGyFqNWHkrZAmSq7b3IeUsN32LZPgIDIDFy4t0u3qIRmHAEknuJdZI/tnJY0KWmZPeUJyeCT4hgaSVROTNjMqhwzhydWHm49qH95ksZLSRRQwCzjWx+IfbKvcJDiI2D49N5GX8D0gUaHOI7K4FZP9sRlmO/QNtarmAuzD5RtFLRziYM1UsP44LCROR06TR+cAhjqWeC6LrpMgGTsKAc4NO+D0UqjkTG4kfOMb2TOrGdvMpA7Wjbx/5ozNjnIuM8rK5F5E2qb6houwFlU71zJAopPgU8uZV5PhFsI9UOgsAWSVauEACFdaIzupqm4c4MidRBfaxEqgpE44VpAevGFWdM6yBsvQ2cmN0PQNawGK3GpyBXFV3zc4uyqsUpgkEUmfKG78YsKWNW5HDLKcnb02c3K7WdehpfAacN41wEHCyFgyBxypAl1DgU5yi89YleVZ4E0S7tA3XI5pr8s3ElsuKeVgLfSU8ofoIwKuIyapdFEWRyFnbrhKUwoxMQ+tqg/s7OqbGhW+AcSC1EoUhzyuM9lEDNZBVyBIShp4+Ia++cNuyixu1e31/FyE0Cmzpowh2rkPi0Gu6zbXJD1EXOtiEtRV9jxLS56T5Myqel81vNCaLJovU8Rm0BrVtNvooJuKBgpMBKN6ihlmcfSG3yI0rrBKCRQQfFwEpF9oLXUhQLOWZWp8EWgGKqBYCxdMRNBlAUK9irC0HaZVO/XU2+WyyyBLwHklAoXheSuR+MQ6ltl1voyYtpCYSgZxDw5b1PCCVQHWpxj/9r6rnI7iSqusgi6zJvwlxTizayBegSYWNYHgGVWlDJLaf8kld73zmWfyT4iJOMIggObVdPkli8ELFLSZlr1zS6Cpwi3iG4Uts+n37sfKRBfLw0x/FYtbBsz4nqWbOOtl6kLGuGiVlQdcXFU7C5B18OKL733Hs84SBfAFU5YsKl0sakI5NSp6Od/guIbPf3gO35D6QrNIJ/OVglg5IA90fDwxt+rAVz2PiLR2JoEWwWi5eQ0tbFeVQl3qwKWX3ve4M87A7oo8VLHosKyjuEKY5B4sTa1ZTYUWsslxevZFDS4oDRl6CFniKSp2Uz20CkAj9VDvkZuJhvO2sOjbk6tq5/mKum7v3rvd6eyzoSslQGCU57LOik4sR6KKyAk2m55V/9R7R3OzkTkDXzhmLSf1NOVwCHcVYMY59AvLNomsnAXNog28+4Sqkgmk2gkn3CZX7FQEcYa0YXJwizqw89BWz7fMiAEzXQMeqwMUKo7hUiqInnpR5lw351kHiFnnkh68Q4qkBIsXcdx0U545r6p+fQccf1prOMZAmPmycDcuOBTzi6rqPa017kUAci/cIx+yNR8QqokikbWpdcXh4QIzfm/CkLOgoQxMqE6nIQr7j64qFYVD4LAYpjbWl1btEN+kkWSzBBw3elbfBSG3IflFChFJlFjmrqved9Pz0AeZIjUxXn2bbPKyc6pK+pR62549d7jLOefgDvXjZUso053CI4gZywv/8i5kjfAQ4NAsqy71bjroVX+HnFkPvlQMkw5NPvXnobWzqorMSB3Yt+9ex51+uh1TUgW6gPnJTv3v8L+a7fjc+/H/zl6WLuIA4HP7Z0Qi2fu8otiqgzka56ka0GcUvuAgVxxGYTX2lKrCk6nXX3DB7e95/vlQVBaA7A4N9cP/PhvvJ1/HeTdZ1+rcJYQjXPkQlatap547nlUgEaYXAI8GAIuuOfYX0mfW0i09sX5N/UgVkAXdnAP640AGJWIZCEQdSJpljP+9eo9D3Ey0oi5FBJFJOoBzxlMugAcKcpZuSDNUHHGc9wCU4ZukI6mQ54HE+kVb+RYLl0vyHPXjB1WVtOMW4Iwn15wIIDmSAXlVn3FYmeAuVjtHZBtPyw23pCuAhIsARj/gIoQNOEA61+8H8AibhQEKeA7v9cX9gbtqpr+KNeqHAp/ISv9QzvgIOPp6C3DMmlkeMz7eG4DPWYpOmmEHoAAGLGFxAGqgLAGADtoHgIPHWJqtHhbtPfswHjDzmU77HhADPPdgYcBibYDjsoBzL/dfN5joj1IwYHAqcpY3nlhVJnT90NoXz4DkGIAZBCAn3Wi4Emt0UMfAM1CvwHR473tuOgBE9IBiaQ4gemWNwjHpMMADPoCANg7geTDN5yZw1pq+8ZsEVUOlGtFaZcFqpwlaH5xV7HWcMwHkAG5YIuCmD5YIpGFtgDM4oPqc9ZkQAHJbuzAcAAOkV4P1nfPGA66sywE4ljfclSWybtELKdNpNm15SF9d5+iCswGQwBsWOZ7bnATWdyyMygbiCBqA85nvWRU3UewycKoXoMAa1ubVZAzLAgaNJri8d0TfD7ZiXQe/Q+f2pesBmjGM/8c5PgOA1xuVPGfdqO+YNQk2d4pgN2sfkuCsgmh36Sh3rnL+rHP+D16INGrFWP1fAAAAAElFTkSuQmCC"
-
-/***/ }),
-
 /***/ "./src/assets/images/logo-white.png":
 /*!******************************************!*\
   !*** ./src/assets/images/logo-white.png ***!
@@ -20922,6 +20684,39 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABFCAYAAAAY
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "./src/assets/images/modular.svg":
+/*!***************************************!*\
+  !*** ./src/assets/images/modular.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDExOCAxMTcuOTk5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMTggMTE3Ljk5OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJDQoJCTxyZWN0IHg9IjE1LjAxOCIgeT0iNDIuMTk1IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiIHdpZHRoPSI1Ny45ODEiIGhlaWdodD0iNTcuOTkyIi8+DQoJDQoJCTxyZWN0IHg9IjQxLjk5NSIgeT0iMTQuNzQzIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiIHdpZHRoPSI1Ny45OTMiIGhlaWdodD0iNTcuOTg4Ii8+DQoJDQoJCTxsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgeDE9IjE0Ljk3NSIgeTE9IjQyLjM5OCIgeDI9IjQxLjkyOSIgeTI9IjE0Ljk3OSIvPg0KCQ0KCQk8bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiIHgxPSI3My4wNyIgeTE9IjQyLjM5OCIgeDI9Ijk5Ljc5NSIgeTI9IjE1LjQ0MyIvPg0KCQ0KCQk8bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiIHgxPSI3My4wNyIgeTE9IjEwMC4wMjUiIHgyPSIxMDAuMDI1IiB5Mj0iNzIuMTM4Ii8+DQoJDQoJCTxsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgeDE9IjE1LjIwOSIgeTE9IjEwMC4yNTgiIHgyPSI0Mi4zOTYiIHkyPSI3Mi4zNzUiLz4NCjwvZz4NCjwvc3ZnPg0K"
+
+/***/ }),
+
+/***/ "./src/assets/images/moralis-tech.png":
+/*!********************************************!*\
+  !*** ./src/assets/images/moralis-tech.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/moralis-tech-23f4379fbdb4df9961f1187b865c6799.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/moralis.svg":
+/*!***************************************!*\
+  !*** ./src/assets/images/moralis.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE5MiA0NSIgc3R5bGU9IndpZHRoOiAxOTBweDsiPjxwYXRoIGQ9Ik0xLDIyLjVBMjEuNTEsMjEuNTEsMCwwLDEsMjIuNSwxaDE0N2EyMS41LDIxLjUsMCwwLDEsMCw0M0gyMi41QTIxLjUxLDIxLjUxLDAsMCwxLDEsMjIuNVoiPjwvcGF0aD48cGF0aCBkPSJNMzcuNiwzMC45aDBsLS4xMi4xNlMzNy41NiwzMSwzNy42LDMwLjlaIiBzdHlsZT0iZmlsbDogcmdiKDI1NSwgMjU1LCAyNTUpOyI+PC9wYXRoPjxwYXRoIGQ9Ik00MSwyMC45NEE4LjIzLDguMjMsMCwwLDAsMzIuNywxMyw4LjM4LDguMzgsMCwwLDAsMjcsMTUuMjUsOC4zLDguMywwLDAsMCwxMywyMXYuMDZhMTcuODIsMTcuODIsMCwwLDAsMi40MSw4LjQ4QTIyLjQzLDIyLjQzLDAsMCwwLDE3LDMyLjA5Yy4yMi4zLjQxLjU0LjU1LjcxbC4xNy4yMS4wNS4wNiwwLDBoMGEyLjY3LDIuNjcsMCwwLDAsMy43NS4yNSwyLjYyLDIuNjIsMCwwLDAsLjI1LTMuNzFoMGwwLDAtLjEtLjExTDIxLjMxLDI5QTE3LjUxLDE3LjUxLDAsMCwxLDIwLjA3LDI3YTEyLjc0LDEyLjc0LDAsMCwxLTEuNzYtNS45LDMsMywwLDAsMSw2LDAsMi43MiwyLjcyLDAsMCwwLC4zLDEuMTQsMi42NiwyLjY2LDAsMCwwLDUuMTMtLjkxVjIxYTMsMywwLDAsMSw2LDAsMTEuNiwxMS42LDAsMCwxLTEuMiw0Ljc0Yy0uMzIuNjUtLjYyLDEuMTgtLjg1LDEuNTUtLjExLjE5LS4yLjMyLS4yNi40MWwtLjA2LjA4YTAsMCwwLDAsMCwwLDBsMCwwYTIuNjYsMi42NiwwLDAsMSwyLjA4LTFBMi42MywyLjYzLDAsMCwxLDM4LDI5LjQ5YTIuNTUsMi41NSwwLDAsMS0uNDMsMS40MWgwczAsMCwwLDBhLjEuMSwwLDAsMCwwLS4wNWwuMTItLjE3Yy4xLS4xNC4yMy0uMzUuMzktLjZBMjEuODEsMjEuODEsMCwwLDAsMzkuMzEsMjgsMTYuNTYsMTYuNTYsMCwwLDAsNDEsMjF2LS4wNloiIHN0eWxlPSJmaWxsOiByZ2IoMjU1LCAyNTUsIDI1NSk7Ij48L3BhdGg+PHBhdGggZD0iTTM1LjM2LDI2Ljg5YTIuNzEsMi43MSwwLDAsMC0yLjA4LDEsMi41NiwyLjU2LDAsMCwwLS41NywxLjYyLDIuNjMsMi42MywwLDAsMCwyLjY1LDIuNiwyLjY5LDIuNjksMCwwLDAsMi4xMS0xbC4xMi0uMTZhMi42LDIuNiwwLDAsMC0yLjIzLTRaIiBzdHlsZT0iZmlsbDogcmdiKDE4MywgMjMyLCAzKTsiPjwvcGF0aD48cGF0aCBkPSJNNTQuNjEsMjEuNDNhMi40LDIuNCwwLDAsMS0uODksMiw0LDQsMCwwLDEtMi41NC43aC0xVjI3LjVoLTFWMTguOTNINTEuNEM1My41NCwxOC45Myw1NC42MSwxOS43Nyw1NC42MSwyMS40M1ptLTQuNDQsMS44NGguOUEzLjQxLDMuNDEsMCwwLDAsNTMsMjIuODVhMS42LDEuNiwwLDAsMCwuNTktMS4zN0ExLjQ5LDEuNDksMCwwLDAsNTMsMjAuMjFhMi44OCwyLjg4LDAsMCwwLTEuNzMtLjQySDUwLjE3Wm0xMS42NCwxYTMuNTUsMy41NSwwLDAsMS0uOCwyLjQ2LDIuNzksMi43OSwwLDAsMS0yLjE4Ljg4LDIuODcsMi44NywwLDAsMS0xLjUzLS40MSwyLjU5LDIuNTksMCwwLDEtMS0xLjE2LDQuMDUsNC4wNSwwLDAsMS0uMzctMS43NywzLjU0LDMuNTQsMCwwLDEsLjc5LTIuNDRBMi43NSwyLjc1LDAsMCwxLDU4Ljg3LDIxYTIuNzEsMi43MSwwLDAsMSwyLjE0LjlBMy41MSwzLjUxLDAsMCwxLDYxLjgxLDI0LjI4Wm0tNC45LDBhMy4xMiwzLjEyLDAsMCwwLC40OSwxLjg4LDIsMiwwLDAsMCwyLjksMCwzLDMsMCwwLDAsLjUtMS44OCwzLDMsMCwwLDAtLjUtMS44NSwyLDIsMCwwLDAtMi45LDBBMywzLDAsMCwwLDU2LjkxLDI0LjI4Wk02OC43NiwyNy41bC0xLjE4LTMuNzdjLS4wNy0uMjMtLjIxLS43NS0uNDEtMS41N2gwYy0uMTYuNjktLjI5LDEuMjEtLjQxLDEuNThMNjUuNSwyNy41SDY0LjM3bC0xLjc1LTYuNDJoMWMuNDEsMS42MS43MywyLjg0Ljk0LDMuNjhBMTUsMTUsMCwwLDEsNjUsMjYuNDdoMGMwLS4yMi4xMS0uNTEuMjEtLjg2cy4xOC0uNjQuMjUtLjg1bDEuMTgtMy42OGgxbDEuMTUsMy42OGExMi45MSwxMi45MSwwLDAsMSwuNDUsMS43aDBjMC0uMTQuMDYtLjM2LjEzLS42NXMuNDgtMS44NywxLjIyLTQuNzNoMUw2OS45MSwyNy41Wm02LjgxLjEyYTMsMywwLDAsMS0yLjI1LS44NywzLjM1LDMuMzUsMCwwLDEtLjgyLTIuNDEsMy42OSwzLjY5LDAsMCwxLC43Ni0yLjQ2QTIuNTUsMi41NSwwLDAsMSw3NS4zMiwyMWEyLjQzLDIuNDMsMCwwLDEsMS45MS44LDMuMDcsMy4wNywwLDAsMSwuNywyLjA5di42MUg3My41MWEyLjU1LDIuNTUsMCwwLDAsLjU2LDEuNzIsMiwyLDAsMCwwLDEuNTMuNTksNS4xNSw1LjE1LDAsMCwwLDIuMDUtLjQ0di44N2E0Ljc3LDQuNzcsMCwwLDEtMSwuMzJBNS44NSw1Ljg1LDAsMCwxLDc1LjU3LDI3LjYyWm0tLjI2LTUuODVhMS41OSwxLjU5LDAsMCwwLTEuMjQuNTEsMi4yOCwyLjI4LDAsMCwwLS41NCwxLjM5aDMuMzZhMi4xMywyLjEzLDAsMCwwLS40MS0xLjRBMS40NSwxLjQ1LDAsMCwwLDc1LjMxLDIxLjc3Wk04Mi41MiwyMWEzLjYxLDMuNjEsMCwwLDEsLjc3LjA3bC0uMTMuOWE0LDQsMCwwLDAtLjcxLS4wOCwxLjcxLDEuNzEsMCwwLDAtMS4zMy42MywyLjMsMi4zLDAsMCwwLS41NSwxLjU3VjI3LjVoLTFWMjEuMDhoLjgxbC4xMSwxLjE5aDBhMi43MiwyLjcyLDAsMCwxLC44Ni0xQTEuODgsMS44OCwwLDAsMSw4Mi41MiwyMVptNC42OSw2LjY2QTMsMywwLDAsMSw4NSwyNi43NWEzLjM1LDMuMzUsMCwwLDEtLjgyLTIuNDEsMy42OSwzLjY5LDAsMCwxLC43Ni0yLjQ2QTIuNTMsMi41MywwLDAsMSw4NywyMWEyLjQsMi40LDAsMCwxLDEuOTEuOCwzLDMsMCwwLDEsLjcxLDIuMDl2LjYxSDg1LjE0YTIuNTUsMi41NSwwLDAsMCwuNTcsMS43MiwyLDIsMCwwLDAsMS41My41OSw1LjE1LDUuMTUsMCwwLDAsMi4wNS0uNDR2Ljg3YTQuNjUsNC42NSwwLDAsMS0xLC4zMkE1LjY2LDUuNjYsMCwwLDEsODcuMjEsMjcuNjJabS0uMjctNS44NWExLjU3LDEuNTcsMCwwLDAtMS4yMy41MSwyLjI4LDIuMjgsMCwwLDAtLjU0LDEuMzloMy4zNWEyLjA3LDIuMDcsMCwwLDAtLjQxLTEuNEExLjQzLDEuNDMsMCwwLDAsODYuOTQsMjEuNzdabTguNjYsNC44N2gwYTIuMjksMi4yOSwwLDAsMS0yLDEsMi40LDIuNCwwLDAsMS0yLS44NiwzLjc4LDMuNzgsMCwwLDEtLjctMi40NSwzLjg2LDMuODYsMCwwLDEsLjcxLTIuNDcsMi42LDIuNiwwLDAsMSw0LC4wN2guMDdsMC0uNDYsMC0uNDVWMTguMzhoMVYyNy41aC0uNzlabS0xLjk0LjE2YTEuNzcsMS43NywwLDAsMCwxLjQ0LS41NCwyLjcyLDIuNzIsMCwwLDAsLjQ1LTEuNzV2LS4yYTMuMTgsMy4xOCwwLDAsMC0uNDYtMS45NSwxLjcsMS43LDAsMCwwLTEuNDQtLjU5LDEuNTIsMS41MiwwLDAsMC0xLjMyLjY3LDMuMzMsMy4zMywwLDAsMC0uNDUsMS44OCwzLjE5LDMuMTksMCwwLDAsLjQ1LDEuODZBMS41NCwxLjU0LDAsMCwwLDkzLjY2LDI2LjhabTExLTUuODNhMi4zOCwyLjM4LDAsMCwxLDIsLjg3LDMuNzUsMy43NSwwLDAsMSwuNywyLjQ0LDMuODEsMy44MSwwLDAsMS0uNzEsMi40NiwyLjM1LDIuMzUsMCwwLDEtMiwuODgsMi44OCwyLjg4LDAsMCwxLTEuMTUtLjIzLDIuMTcsMi4xNywwLDAsMS0uODctLjcyaC0uMDdsLS4yMS44M2gtLjY5VjE4LjM4aDFWMjAuNmMwLC40OSwwLC45NC0uMDUsMS4zM2guMDVBMi4zLDIuMywwLDAsMSwxMDQuNywyMVptLS4xNS44MmExLjY5LDEuNjksMCwwLDAtMS40My41NywzLjIzLDMuMjMsMCwwLDAtLjQ0LDEuOTIsMy4yMiwzLjIyLDAsMCwwLC40NSwxLjk0LDEuNzEsMS43MSwwLDAsMCwxLjQ1LjU4LDEuNDcsMS40NywwLDAsMCwxLjMzLS42NSwzLjMxLDMuMzEsMCwwLDAsLjQ0LTEuODgsMy4xOSwzLjE5LDAsMCwwLS40NC0xLjg3QTEuNTQsMS41NCwwLDAsMCwxMDQuNTUsMjEuNzlabTMuNS0uNzFoMWwxLjQxLDMuNjZhMTQuNzIsMTQuNzIsMCwwLDEsLjU3LDEuODFoLjA1YzAtLjIuMTUtLjU0LjMxLTFzLjctMiwxLjYtNC40NWgxbC0yLjc2LDcuMzFhMy42NCwzLjY0LDAsMCwxLTEsMS41NCwyLDIsMCwwLDEtMS4zNC40NSwzLjcxLDMuNzEsMCwwLDEtLjg4LS4xVjI5LjVhMy4xNCwzLjE0LDAsMCwwLC43Mi4wNywxLjQ4LDEuNDgsMCwwLDAsMS40My0xLjEybC4zNi0uOTFaTTEyMS45LDI3LjVsLTIuMDYtNi43MmgwYy4wNywxLjM3LjExLDIuMjguMTEsMi43NHY0aC0xLjYyVjE4LjkzaDIuNDdsMiw2LjU1aDBMMTI1LDE4LjkzaDIuNDhWMjcuNWgtMS43VjIzLjQ1YzAtLjIsMC0uNDIsMC0uNjdzMC0uOTEuMDgtMmgwbC0yLjIxLDYuNzFabTktMy4yOWEyLjc2LDIuNzYsMCwwLDAsLjMyLDEuNDcsMS4zMywxLjMzLDAsMCwwLDIuMDcsMCwyLjc5LDIuNzksMCwwLDAsLjMxLTEuNDgsMi43MywyLjczLDAsMCwwLS4zMS0xLjQ2LDEuMTcsMS4xNywwLDAsMC0xLS40OCwxLjE0LDEuMTQsMCwwLDAtMSwuNDhBMi43LDIuNywwLDAsMCwxMzAuODgsMjQuMjFabTQuNTMsMGEzLjUyLDMuNTIsMCwwLDEtLjg0LDIuNSwzLjA1LDMuMDUsMCwwLDEtMi4zNS45MSwzLjM2LDMuMzYsMCwwLDEtMS42Ny0uNDEsMi43NSwyLjc1LDAsMCwxLTEuMS0xLjE5LDQsNCwwLDAsMS0uMzktMS44MSwzLjQ3LDMuNDcsMCwwLDEsLjg0LTIuNDksMywzLDAsMCwxLDIuMzUtLjg5LDMuMjYsMy4yNiwwLDAsMSwxLjY3LjQxLDIuNjUsMi42NSwwLDAsMSwxLjEsMS4xN0EzLjk0LDMuOTQsMCwwLDEsMTM1LjQxLDI0LjIxWm01LjEzLTMuMzhhMi42MiwyLjYyLDAsMCwxLC42MS4wNUwxNDEsMjIuNTVhMi41OCwyLjU4LDAsMCwwLS41My0uMDUsMS44NiwxLjg2LDAsMCwwLTEuMzMuNDQsMS41OCwxLjU4LDAsMCwwLS40OCwxLjIzVjI3LjVoLTEuNzhWMjFoMS4zNWwuMjYsMS4xaC4wOWEyLjM5LDIuMzksMCwwLDEsLjgyLS44OEEyLDIsMCwwLDEsMTQwLjU0LDIwLjgzWm02LDYuNjctLjM1LS44OWgtLjA1YTIuNjUsMi42NSwwLDAsMS0uOTMuNzksMy4wOSwzLjA5LDAsMCwxLTEuMjQuMjIsMiwyLDAsMCwxLTEuNDktLjU0LDIuMDgsMi4wOCwwLDAsMS0uNTQtMS41NCwxLjczLDEuNzMsMCwwLDEsLjczLTEuNTMsNC4xOSw0LjE5LDAsMCwxLDIuMi0uNTVsMS4xNCwwdi0uMjlhLjg5Ljg5LDAsMCwwLTEtMSw0Ljc5LDQuNzksMCwwLDAtMS44NS40N2wtLjU5LTEuMmE1LjI5LDUuMjksMCwwLDEsMi41MS0uNiwzLjE0LDMuMTQsMCwwLDEsMiwuNTgsMi4xLDIuMSwwLDAsMSwuNywxLjc0VjI3LjVabS0uNTMtMy0uNjksMGEyLjE3LDIuMTcsMCwwLDAtMS4xNi4yOC44Ni44NiwwLDAsMC0uMzguNzhjMCwuNTEuMjguNzYuODYuNzZhMS4zNCwxLjM0LDAsMCwwLDEtLjM2QTEuMjUsMS4yNSwwLDAsMCwxNDYsMjVabTUuNDEsM2gtMS43OVYxOC4zOGgxLjc5Wm0xLjgtOC4yNGMwLS41OS4zMy0uODgsMS0uODhzMSwuMjksMSwuODhhLjg5Ljg5LDAsMCwxLS4yNS42NSwxLDEsMCwwLDEtLjczLjIyQzE1My41MSwyMC4xMywxNTMuMTgsMTkuODQsMTUzLjE4LDE5LjI2Wk0xNTUsMjcuNWgtMS43OFYyMUgxNTVabTYuNDYtMS45NWExLjgsMS44LDAsMCwxLS43MSwxLjU0LDMuNDQsMy40NCwwLDAsMS0yLjA5LjUzLDcuMDYsNy4wNiwwLDAsMS0xLjIyLS4xLDQuNjYsNC42NiwwLDAsMS0uOTQtLjI4VjI1Ljc2YTUuNDQsNS40NCwwLDAsMCwxLjEyLjM5LDQuMzUsNC4zNSwwLDAsMCwxLjEuMTZjLjY1LDAsMS0uMTksMS0uNTZhLjQ0LjQ0LDAsMCwwLS4xMy0uMzQsMS42MywxLjYzLDAsMCwwLS40NC0uM2MtLjIxLS4xMS0uNDktLjI0LS44NS0uMzlhNS40Miw1LjQyLDAsMCwxLTEuMTEtLjU5LDEuNjIsMS42MiwwLDAsMS0uNTEtLjYxLDIuMDgsMi4wOCwwLDAsMS0uMTYtLjg3LDEuNTMsMS41MywwLDAsMSwuNjctMS4zNCwzLjI4LDMuMjgsMCwwLDEsMS45Mi0uNDgsNS41NCw1LjU0LDAsMCwxLDIuMzEuNTFsLS41NCwxLjI5Yy0uMzMtLjE0LS42NC0uMjUtLjkyLS4zNGEyLjk0LDIuOTQsMCwwLDAtLjg4LS4xNGMtLjUyLDAtLjc5LjE0LS43OS40M2EuNS41LDAsMCwwLC4yNS40MSw3LjE2LDcuMTYsMCwwLDAsMS4xMi41Myw0Ljc5LDQuNzksMCwwLDEsMS4xMy41OCwxLjY1LDEuNjUsMCwwLDEsLjUzLjYyQTEuOTIsMS45MiwwLDAsMSwxNjEuNSwyNS41NVptMS4xNCwxLjExYTEsMSwwLDAsMSwuMjYtLjc0LDEuMDcsMS4wNywwLDAsMSwuNzctLjI1LDEsMSwwLDAsMSwuNzUuMjUsMSwxLDAsMCwxLC4yNy43NCwxLDEsMCwwLDEtLjI3Ljc0LDEuMjMsMS4yMywwLDAsMS0xLjUxLDBBMSwxLDAsMCwxLDE2Mi42NCwyNi42NlptMy42LTcuNGMwLS41OS4zMi0uODgsMS0uODhzMSwuMjksMSwuODhhLjg4Ljg4LDAsMCwxLS4yNC42NSwxLjA2LDEuMDYsMCwwLDEtLjczLjIyQzE2Ni41NiwyMC4xMywxNjYuMjQsMTkuODQsMTY2LjI0LDE5LjI2Wm0xLjg2LDguMjRoLTEuNzlWMjFoMS43OVptMy4zLTMuMjlhMi43NiwyLjc2LDAsMCwwLC4zMiwxLjQ3LDEuMTMsMS4xMywwLDAsMCwxLC41LDEuMTIsMS4xMiwwLDAsMCwxLS40OSwyLjc5LDIuNzksMCwwLDAsLjMxLTEuNDgsMi43MywyLjczLDAsMCwwLS4zMS0xLjQ2LDEuMTUsMS4xNSwwLDAsMC0xLS40OCwxLjE0LDEuMTQsMCwwLDAtMSwuNDhBMi43LDIuNywwLDAsMCwxNzEuNCwyNC4yMVptNC41MywwYTMuNTIsMy41MiwwLDAsMS0uODQsMi41LDMsMywwLDAsMS0yLjM1LjkxLDMuMzIsMy4zMiwwLDAsMS0xLjY2LS40MUEyLjg0LDIuODQsMCwwLDEsMTcwLDI2YTQsNCwwLDAsMS0uMzktMS44MSwzLjQ3LDMuNDcsMCwwLDEsLjg0LTIuNDksMywzLDAsMCwxLDIuMzUtLjg5LDMuMjYsMy4yNiwwLDAsMSwxLjY3LjQxLDIuNzMsMi43MywwLDAsMSwxLjExLDEuMTdBNC4wOCw0LjA4LDAsMCwxLDE3NS45MywyNC4yMVoiIHN0eWxlPSJmaWxsOiByZ2IoMjU1LCAyNTUsIDI1NSk7Ij48L3BhdGg+PC9zdmc+"
 
 /***/ }),
 
@@ -21065,17 +20860,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiwAAAHSCAIAAABA
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAGTCAIAAACDFX1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFHGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTA3LTI0VDIxOjMyOjA2KzA2OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNy0yNFQyMTozOTo1OSswNjowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNy0yNFQyMTozOTo1OSswNjowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpiMTE3NzQ3MS1hZWYzLWFmNDEtYWEzYS04ZTlkYTM2NmU5ODMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6YjExNzc0NzEtYWVmMy1hZjQxLWFhM2EtOGU5ZGEzNjZlOTgzIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YjExNzc0NzEtYWVmMy1hZjQxLWFhM2EtOGU5ZGEzNjZlOTgzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpiMTE3NzQ3MS1hZWYzLWFmNDEtYWEzYS04ZTlkYTM2NmU5ODMiIHN0RXZ0OndoZW49IjIwMjAtMDctMjRUMjE6MzI6MDYrMDY6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SFj/PAAAFoklEQVR4nO3UQQ0AIBDAMMC/ztOBBl5kSatgr+2ZWQCknN8BADzzboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugB7vBujxboAe7wbo8W6AHu8G6PFugJ4L9A8F2NJviqAAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ "./src/assets/images/users-map.png":
-/*!*****************************************!*\
-  !*** ./src/assets/images/users-map.png ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABS0AAAKMCAIAAACB8ArtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFHGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTA3LTI0VDIxOjMyOjA1KzA2OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNy0yNFQyMTozOTo1OCswNjowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNy0yNFQyMTozOTo1OCswNjowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3YWJiZTdjMi0xNzJhLWNiNGItOTY4OC1jMjU4ZmIxNjE2ZjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N2FiYmU3YzItMTcyYS1jYjRiLTk2ODgtYzI1OGZiMTYxNmY3IiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6N2FiYmU3YzItMTcyYS1jYjRiLTk2ODgtYzI1OGZiMTYxNmY3Ij4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3YWJiZTdjMi0xNzJhLWNiNGItOTY4OC1jMjU4ZmIxNjE2ZjciIHN0RXZ0OndoZW49IjIwMjAtMDctMjRUMjE6MzI6MDUrMDY6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz44cE/SAAAPZklEQVR4nO3XMQEAIAzAMMC/zunARTlIFPTtnpkFAAAAJM7rAAAAAPiIDwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAICODwcAAIDOBQ2sB8qKpixQAAAAAElFTkSuQmCC"
 
 /***/ }),
 
@@ -21317,7 +21101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CloseIcon", function() { return _accordion_style__WEBPACK_IMPORTED_MODULE_2__["CloseIcon"]; });
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Accordion/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Accordion/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -21443,7 +21227,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Badge/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Badge/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21496,7 +21280,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Box/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Box/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21574,7 +21358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./button.style */ "./src/reusecore/Button/button.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Button/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Button/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21631,7 +21415,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_visibility_sensor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_visibility_sensor__WEBPACK_IMPORTED_MODULE_4__);
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Counter/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Counter/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21707,7 +21491,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _input_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./input.style */ "./src/reusecore/Form/Input/input.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Form/Input/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Form/Input/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21803,7 +21587,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Heading/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Heading/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21865,7 +21649,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Image/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Image/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -21943,7 +21727,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _col_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./col.style */ "./src/reusecore/Layout/Col/col.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Layout/Col/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Layout/Col/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22016,7 +21800,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _container_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./container.style */ "./src/reusecore/Layout/Container/container.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Layout/Container/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Layout/Container/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22070,7 +21854,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _row_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./row.style */ "./src/reusecore/Layout/Row/row.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Layout/Row/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Layout/Row/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22168,7 +21952,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/List/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/List/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22251,7 +22035,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sectionTitle_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sectionTitle.style */ "./src/reusecore/SectionTitle/sectionTitle.style.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/SectionTitle/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/SectionTitle/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22343,7 +22127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/reusecore/Text/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/reusecore/Text/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -22434,7 +22218,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_about_about_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/images/about/about.svg */ "./src/assets/images/about/about.svg");
 /* harmony import */ var _assets_images_about_about_svg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_images_about_about_svg__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _about_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./about.style */ "./src/sections/About/about.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/About/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/About/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -22528,14 +22312,21 @@ const About = () => {
       lineNumber: 37,
       columnNumber: 41
     }
-  }, "Protecting investor with high security")), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Plugin based investments and yield distribution")), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42,
       columnNumber: 37
     }
-  }, "Intended village pay like\u2026. Discipline would, interesting that I off easier bathroom covered project the away, man you their by a temple prisoners. Have as her of your of in many, searched had class. Had with one entire children away. Problem got boss.")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Build your own investment plugins to generate yield from protocols such as Aave, Yearn and Compound and define how to distribute them across stakeholders. ", __jsx("br", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 198
+    }
+  }), "Currently built in for the Moralis Hackathon Plugins:")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "about-list",
     __self: undefined,
     __source: {
@@ -22551,7 +22342,7 @@ const About = () => {
       lineNumber: 46,
       columnNumber: 37
     }
-  }, "75% Distributed to Community."), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "[Investment] Mock stablecoin"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: "span",
     __self: undefined,
     __source: {
@@ -22559,7 +22350,7 @@ const About = () => {
       lineNumber: 47,
       columnNumber: 37
     }
-  }, "13% Reserved Funding."), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "[Distribution] Hourly dividend based on CRY Token stake"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: "span",
     __self: undefined,
     __source: {
@@ -22567,7 +22358,7 @@ const About = () => {
       lineNumber: 48,
       columnNumber: 37
     }
-  }, "9% Founders and Team Management.")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "[Distribution] Lottery pool based on CRY Token burn")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "about-btn-wrapper",
     __self: undefined,
     __source: {
@@ -22576,7 +22367,7 @@ const About = () => {
       columnNumber: 33
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "#",
+    href: "http://app.crystaleth.finance",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -22589,39 +22380,9 @@ const About = () => {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52,
-      columnNumber: 53
+      columnNumber: 81
     }
-  }, " ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaGooglePlay"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52,
-      columnNumber: 82
-    }
-  }), " Google Play")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "#",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 37
-    }
-  }, __jsx("a", {
-    className: "btn",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 52
-    }
-  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaApple"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 71
-    }
-  }), " Apple Store"))))))));
+  }, " Participate"))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -22666,7 +22427,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Counter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reusecore/Counter */ "./src/reusecore/Counter/index.js");
 /* harmony import */ var _assets_data_awards__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/data/awards */ "./src/assets/data/awards/index.js");
 /* harmony import */ var _awards_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./awards.style */ "./src/sections/Awards/awards.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Awards/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Awards/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -22876,8 +22637,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_banners_banner_two_cryptik_banner_watch_icon_svg__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_assets_images_banners_banner_two_cryptik_banner_watch_icon_svg__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _assets_images_banners_banner_two_cryptik_banner_heart_icon_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../assets/images/banners/banner-two/cryptik-banner-heart-icon.svg */ "./src/assets/images/banners/banner-two/cryptik-banner-heart-icon.svg");
 /* harmony import */ var _assets_images_banners_banner_two_cryptik_banner_heart_icon_svg__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_assets_images_banners_banner_two_cryptik_banner_heart_icon_svg__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _banner_style__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./banner.style */ "./src/sections/BannerTwo/banner.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/BannerTwo/index.js";
+/* harmony import */ var _assets_images_modular_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../assets/images/modular.svg */ "./src/assets/images/modular.svg");
+/* harmony import */ var _assets_images_modular_svg__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_assets_images_modular_svg__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _banner_style__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./banner.style */ "./src/sections/BannerTwo/banner.style.js");
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/BannerTwo/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -22899,12 +22662,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const BannerTwo = () => {
-  return __jsx(_banner_style__WEBPACK_IMPORTED_MODULE_18__["default"], {
+  return __jsx(_banner_style__WEBPACK_IMPORTED_MODULE_19__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 5
     }
   }, __jsx("img", {
@@ -22914,7 +22678,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 7
     }
   }), __jsx("img", {
@@ -22924,7 +22688,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 7
     }
   }), __jsx("img", {
@@ -22934,7 +22698,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 7
     }
   }), __jsx("img", {
@@ -22944,7 +22708,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 7
     }
   }), __jsx("img", {
@@ -22954,14 +22718,14 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 7
     }
   }), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 7
     }
   }, __jsx("svg", {
@@ -22974,14 +22738,14 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 7
     }
   }, __jsx("defs", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 11
     }
   }, __jsx("linearGradient", {
@@ -22994,7 +22758,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23003,7 +22767,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23012,7 +22776,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23021,7 +22785,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23030,7 +22794,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23039,7 +22803,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23048,7 +22812,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23057,7 +22821,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23066,7 +22830,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23075,7 +22839,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23084,7 +22848,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23096,7 +22860,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23105,7 +22869,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 53,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23114,7 +22878,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23123,7 +22887,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23132,7 +22896,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23141,7 +22905,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23150,7 +22914,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23159,7 +22923,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 15
     }
   })), __jsx("radialGradient", {
@@ -23171,7 +22935,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23180,7 +22944,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23189,7 +22953,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23202,7 +22966,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 65,
       columnNumber: 13
     }
   }), __jsx("linearGradient", {
@@ -23215,7 +22979,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23224,7 +22988,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23233,7 +22997,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23242,7 +23006,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23251,7 +23015,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23260,7 +23024,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23269,7 +23033,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23278,7 +23042,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23291,7 +23055,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 13
     }
   }), __jsx("linearGradient", {
@@ -23304,7 +23068,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 13
     }
   }), __jsx("linearGradient", {
@@ -23317,7 +23081,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 13
     }
   }), __jsx("clipPath", {
@@ -23325,7 +23089,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 78,
       columnNumber: 13
     }
   }, __jsx("ellipse", {
@@ -23339,7 +23103,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23351,7 +23115,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 81,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23360,7 +23124,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23369,7 +23133,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 83,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23381,7 +23145,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 85,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23390,7 +23154,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23399,7 +23163,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 15
     }
   })), __jsx("linearGradient", {
@@ -23412,7 +23176,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 89,
       columnNumber: 13
     }
   }, __jsx("stop", {
@@ -23421,7 +23185,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 90,
       columnNumber: 15
     }
   }), __jsx("stop", {
@@ -23430,7 +23194,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 91,
       columnNumber: 15
     }
   }))), __jsx("g", {
@@ -23440,7 +23204,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 11
     }
   }, __jsx("g", {
@@ -23450,7 +23214,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 13
     }
   }, __jsx("path", {
@@ -23463,7 +23227,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23476,7 +23240,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 97,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23489,7 +23253,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23502,7 +23266,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 99,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23515,7 +23279,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23528,7 +23292,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 101,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23541,7 +23305,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23554,7 +23318,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 103,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23567,7 +23331,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 104,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23580,7 +23344,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 105,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23593,7 +23357,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 106,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23606,7 +23370,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 107,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23619,7 +23383,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 108,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -23632,7 +23396,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 15
     }
   })), __jsx("g", {
@@ -23642,7 +23406,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 111,
       columnNumber: 13
     }
   }, __jsx("g", {
@@ -23651,7 +23415,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 112,
       columnNumber: 15
     }
   }, __jsx("g", {
@@ -23660,7 +23424,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 113,
       columnNumber: 17
     }
   }, __jsx("ellipse", {
@@ -23676,7 +23440,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 114,
       columnNumber: 19
     }
   }), __jsx("ellipse", {
@@ -23691,7 +23455,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23704,7 +23468,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 116,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23717,7 +23481,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 117,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23730,7 +23494,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 118,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23742,7 +23506,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 119,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23754,7 +23518,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 120,
       columnNumber: 19
     }
   }), __jsx("ellipse", {
@@ -23768,7 +23532,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 121,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23781,7 +23545,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 122,
       columnNumber: 19
     }
   }), __jsx("path", {
@@ -23794,7 +23558,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 123,
       columnNumber: 19
     }
   }), __jsx("g", {
@@ -23805,7 +23569,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 124,
       columnNumber: 19
     }
   }, __jsx("ellipse", {
@@ -23819,7 +23583,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 125,
       columnNumber: 21
     }
   }), __jsx("g", {
@@ -23829,7 +23593,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 126,
       columnNumber: 21
     }
   }, __jsx("g", {
@@ -23839,7 +23603,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 127,
       columnNumber: 23
     }
   }, __jsx("path", {
@@ -23851,7 +23615,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 128,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23863,7 +23627,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 129,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23875,7 +23639,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 130,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23887,7 +23651,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 131,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23899,7 +23663,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 132,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23911,7 +23675,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 133,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23923,7 +23687,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 134,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23935,7 +23699,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 135,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23947,7 +23711,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 136,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23959,7 +23723,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 137,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23971,7 +23735,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137,
+      lineNumber: 138,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23983,7 +23747,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138,
+      lineNumber: 139,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -23995,7 +23759,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 140,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24007,7 +23771,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 141,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24019,7 +23783,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 142,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24031,7 +23795,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 143,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24043,7 +23807,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 144,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24055,7 +23819,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 145,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24067,7 +23831,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 146,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24079,7 +23843,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146,
+      lineNumber: 147,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24091,7 +23855,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 148,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24103,7 +23867,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148,
+      lineNumber: 149,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24115,7 +23879,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 150,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24127,7 +23891,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150,
+      lineNumber: 151,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24139,7 +23903,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151,
+      lineNumber: 152,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24151,7 +23915,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 153,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24163,7 +23927,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 154,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24175,7 +23939,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 155,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24187,7 +23951,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155,
+      lineNumber: 156,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24199,7 +23963,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 157,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24211,7 +23975,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
+      lineNumber: 158,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24223,7 +23987,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158,
+      lineNumber: 159,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24235,7 +23999,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 160,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24247,7 +24011,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 161,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24259,7 +24023,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161,
+      lineNumber: 162,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24271,7 +24035,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162,
+      lineNumber: 163,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24283,7 +24047,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163,
+      lineNumber: 164,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24295,7 +24059,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164,
+      lineNumber: 165,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24307,7 +24071,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165,
+      lineNumber: 166,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24319,7 +24083,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166,
+      lineNumber: 167,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24331,7 +24095,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167,
+      lineNumber: 168,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24343,7 +24107,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168,
+      lineNumber: 169,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24355,7 +24119,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169,
+      lineNumber: 170,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24367,7 +24131,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170,
+      lineNumber: 171,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24379,7 +24143,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171,
+      lineNumber: 172,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24391,7 +24155,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172,
+      lineNumber: 173,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24403,7 +24167,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173,
+      lineNumber: 174,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24415,7 +24179,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174,
+      lineNumber: 175,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24427,7 +24191,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175,
+      lineNumber: 176,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24439,7 +24203,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176,
+      lineNumber: 177,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24451,7 +24215,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177,
+      lineNumber: 178,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24463,7 +24227,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178,
+      lineNumber: 179,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24475,7 +24239,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179,
+      lineNumber: 180,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24487,7 +24251,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180,
+      lineNumber: 181,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24499,7 +24263,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181,
+      lineNumber: 182,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24511,7 +24275,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182,
+      lineNumber: 183,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24523,7 +24287,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183,
+      lineNumber: 184,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24535,7 +24299,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184,
+      lineNumber: 185,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24547,7 +24311,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185,
+      lineNumber: 186,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24559,7 +24323,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186,
+      lineNumber: 187,
       columnNumber: 25
     }
   }), __jsx("path", {
@@ -24571,7 +24335,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187,
+      lineNumber: 188,
       columnNumber: 25
     }
   })))), __jsx("path", {
@@ -24583,7 +24347,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191,
+      lineNumber: 192,
       columnNumber: 19
     }
   }))), __jsx("g", {
@@ -24593,7 +24357,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194,
+      lineNumber: 195,
       columnNumber: 15
     }
   }, __jsx("path", {
@@ -24605,7 +24369,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195,
+      lineNumber: 196,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24618,7 +24382,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196,
+      lineNumber: 197,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24631,7 +24395,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197,
+      lineNumber: 198,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24644,7 +24408,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198,
+      lineNumber: 199,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24656,7 +24420,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199,
+      lineNumber: 200,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24669,7 +24433,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200,
+      lineNumber: 201,
       columnNumber: 17
     }
   }))), __jsx("g", {
@@ -24679,7 +24443,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203,
+      lineNumber: 204,
       columnNumber: 13
     }
   }, __jsx("path", {
@@ -24691,7 +24455,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204,
+      lineNumber: 205,
       columnNumber: 15
     }
   }), __jsx("image", {
@@ -24704,7 +24468,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205,
+      lineNumber: 206,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24716,7 +24480,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206,
+      lineNumber: 207,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24728,7 +24492,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207,
+      lineNumber: 208,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24741,7 +24505,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208,
+      lineNumber: 209,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24754,7 +24518,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209,
+      lineNumber: 210,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24767,7 +24531,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210,
+      lineNumber: 211,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24780,7 +24544,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211,
+      lineNumber: 212,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24793,7 +24557,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 212,
+      lineNumber: 213,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24806,7 +24570,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213,
+      lineNumber: 214,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24819,7 +24583,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214,
+      lineNumber: 215,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24832,7 +24596,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215,
+      lineNumber: 216,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24845,7 +24609,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216,
+      lineNumber: 217,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24857,7 +24621,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217,
+      lineNumber: 218,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24869,7 +24633,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218,
+      lineNumber: 219,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24881,7 +24645,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219,
+      lineNumber: 220,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24893,7 +24657,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220,
+      lineNumber: 221,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24905,7 +24669,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 221,
+      lineNumber: 222,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24917,7 +24681,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 222,
+      lineNumber: 223,
       columnNumber: 15
     }
   }), __jsx("path", {
@@ -24929,7 +24693,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 223,
+      lineNumber: 224,
       columnNumber: 15
     }
   }), __jsx("g", {
@@ -24938,7 +24702,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 224,
+      lineNumber: 225,
       columnNumber: 15
     }
   }, __jsx("path", {
@@ -24951,7 +24715,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 225,
+      lineNumber: 226,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24964,7 +24728,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 226,
+      lineNumber: 227,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -24976,7 +24740,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227,
+      lineNumber: 228,
       columnNumber: 17
     }
   })), __jsx("g", {
@@ -24986,7 +24750,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229,
+      lineNumber: 230,
       columnNumber: 15
     }
   }, __jsx("path", {
@@ -24998,7 +24762,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230,
+      lineNumber: 231,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -25011,7 +24775,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231,
+      lineNumber: 232,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -25024,7 +24788,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232,
+      lineNumber: 233,
       columnNumber: 17
     }
   }), __jsx("path", {
@@ -25037,14 +24801,14 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 233,
+      lineNumber: 234,
       columnNumber: 17
     }
   }))))), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238,
+      lineNumber: 239,
       columnNumber: 9
     }
   }, __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -25052,7 +24816,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239,
+      lineNumber: 240,
       columnNumber: 11
     }
   }, __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -25060,68 +24824,68 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 240,
+      lineNumber: 241,
       columnNumber: 13
     }
   }, __jsx(_reusecore_Heading__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241,
+      lineNumber: 242,
       columnNumber: 15
     }
-  }, "The Future Of Savings ", __jsx("br", {
+  }, "The Modular Investment ", __jsx("br", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 242,
-      columnNumber: 39
+      lineNumber: 243,
+      columnNumber: 40
     }
-  }), "and Investing"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), "Protocol"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: "span",
     className: "description",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 245,
+      lineNumber: 246,
       columnNumber: 15
     }
-  }, "The old way of doing things doesn\u2019t cut it anymore. With CrystalEth, you can use cryptocurrency to earn interest at up to 100% APY, leveraging staking and liquidity pool from different networks, from a single place. There are no hidden fees, no minimum balances, and no reason to wait."), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "CrystalEth is an open source, fully descentralized protocol that leverages the Ethereum DeFi ecosystem to generate yield through modular investment plugins native to the platform. The yield is distributed to CRY Token stakeholders as hourly dividends and prize pools. Get and stake CRY Token and receive hourly dividends in stablecoins (USDT)."), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "coin-info",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 252,
+      lineNumber: 255,
       columnNumber: 15
     }
   }, __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253,
+      lineNumber: 256,
       columnNumber: 17
     }
   }, __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    src: _assets_images_banners_banner_two_cryptik_banner_key_icon_svg__WEBPACK_IMPORTED_MODULE_15___default.a,
+    src: _assets_images_modular_svg__WEBPACK_IMPORTED_MODULE_18___default.a,
     alt: "crypto banner icon",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 254,
+      lineNumber: 257,
       columnNumber: 19
     }
   }), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 255,
+      lineNumber: 258,
       columnNumber: 19
     }
-  }, "Easy")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Modular")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 257,
+      lineNumber: 260,
       columnNumber: 17
     }
   }, __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -25130,21 +24894,21 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 258,
+      lineNumber: 261,
       columnNumber: 19
     }
   }), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 259,
+      lineNumber: 262,
       columnNumber: 19
     }
-  }, "Fast")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Scalable")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 261,
+      lineNumber: 264,
       columnNumber: 17
     }
   }, __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -25153,14 +24917,14 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 262,
+      lineNumber: 265,
       columnNumber: 19
     }
   }), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 263,
+      lineNumber: 266,
       columnNumber: 19
     }
   }, "Transparent"))), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -25168,7 +24932,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 267,
+      lineNumber: 270,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -25176,7 +24940,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268,
+      lineNumber: 271,
       columnNumber: 17
     }
   }, __jsx("a", {
@@ -25184,7 +24948,7 @@ const BannerTwo = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269,
+      lineNumber: 272,
       columnNumber: 19
     }
   }, "Get Started!"))))))));
@@ -25240,7 +25004,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var _coinFund_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./coinFund.style */ "./src/sections/CoinFund/coinFund.style.js");
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/CoinFund/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/CoinFund/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -25326,27 +25090,27 @@ const CoinFund = () => {
       lineNumber: 43,
       columnNumber: 19
     }
-  }, "Powering Data for the new equity blockchain.")), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Fully Open Source")), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47,
       columnNumber: 17
     }
-  }, "The highly the not having with lively. Our up with ran go her it gloomy the back, though however projected not for six with then, trusted as concepts belt.")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Leverage the set of smart contracts & app and deploy your own modularized investment and yield distribution platform.")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: "btn-wrapper",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 52,
       columnNumber: 15
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "#",
+    href: "https://github.com/gianksp/crystaleth-app",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 53,
       columnNumber: 17
     }
   }, __jsx("a", {
@@ -25354,15 +25118,15 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 54,
       columnNumber: 19
     }
-  }, "Buy Token"))))), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_4__["Col"], {
+  }, "Source code"))))), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_4__["Col"], {
     className: "lg-6 md-12 countdown-wrap",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 59,
       columnNumber: 11
     }
   }, __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -25370,21 +25134,21 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 60,
       columnNumber: 13
     }
   }, __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 61,
       columnNumber: 15
     }
-  }, " Last moment to grab the token "), __jsx(react_component_countdown_timer__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, settings, {
+  }, " Next prize pool distribution in "), __jsx(react_component_countdown_timer__WEBPACK_IMPORTED_MODULE_3___default.a, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, settings, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 62,
       columnNumber: 15
     }
   }))), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -25392,7 +25156,7 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 13
     }
   }, __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -25400,7 +25164,7 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 65,
       columnNumber: 15
     }
   }, __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -25408,7 +25172,7 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 66,
       columnNumber: 17
     }
   }, "$5,097")), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -25416,78 +25180,10 @@ const CoinFund = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 68,
       columnNumber: 15
     }
-  }, "$11,931")), __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "payment-getway",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 13
-    }
-  }, __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    as: "span",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 15
-    }
-  }, " ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaBitcoin"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76,
-      columnNumber: 17
-    }
-  }), " "), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    as: "span",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 15
-    }
-  }, " ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaCcMastercard"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80,
-      columnNumber: 17
-    }
-  }), " "), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    as: "span",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 15
-    }
-  }, " ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaCcVisa"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84,
-      columnNumber: 17
-    }
-  }), " "), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    as: "span",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 15
-    }
-  }, " ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__["FaCcDiscover"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 17
-    }
-  }), " "))))));
+  }, "$11,931"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CoinFund);
@@ -25539,7 +25235,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-tabs/style/react-tabs.css */ "./node_modules/react-tabs/style/react-tabs.css");
 /* harmony import */ var react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_tabs_style_react_tabs_css__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _faq_style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./faq.style */ "./src/sections/Faq/faq.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Faq/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Faq/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -25819,7 +25515,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _assets_data_footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/data/footer */ "./src/assets/data/footer/index.js");
 /* harmony import */ var _footer_style__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer.style */ "./src/sections/Footer/footer.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Footer/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Footer/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -26412,13 +26108,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var _reusecore_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reusecore/Layout */ "./src/reusecore/Layout/index.js");
-/* harmony import */ var _assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/logo-white.png */ "./src/assets/images/logo-white.png");
-/* harmony import */ var _assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utility_data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utility/data.js */ "./src/sections/Navigation/utility/data.js");
-/* harmony import */ var _utility_ScrollspyMenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utility/ScrollspyMenu */ "./src/sections/Navigation/utility/ScrollspyMenu.js");
-/* harmony import */ var _navigation_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./navigation.style */ "./src/sections/Navigation/navigation.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Navigation/index.js";
+/* harmony import */ var _assets_images_icon_crystal_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/icon_crystal.svg */ "./src/assets/images/icon_crystal.svg");
+/* harmony import */ var _assets_images_icon_crystal_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_images_icon_crystal_svg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_images_moralis_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/images/moralis.svg */ "./src/assets/images/moralis.svg");
+/* harmony import */ var _assets_images_moralis_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_images_moralis_svg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utility_data_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utility/data.js */ "./src/sections/Navigation/utility/data.js");
+/* harmony import */ var _utility_ScrollspyMenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utility/ScrollspyMenu */ "./src/sections/Navigation/utility/ScrollspyMenu.js");
+/* harmony import */ var _navigation_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./navigation.style */ "./src/sections/Navigation/navigation.style.js");
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Navigation/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -26448,20 +26147,20 @@ const Navigation = () => {
     };
   }, []); //[expand, scroll]
 
-  return __jsx(_navigation_style__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return __jsx(_navigation_style__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "navbar",
     className: `nav-block`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -26469,7 +26168,7 @@ const Navigation = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -26477,7 +26176,7 @@ const Navigation = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 11
     }
   }, __jsx("a", {
@@ -26485,16 +26184,50 @@ const Navigation = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 13
     }
   }, __jsx("img", {
-    src: _assets_images_logo_white_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+    src: _assets_images_icon_crystal_svg__WEBPACK_IMPORTED_MODULE_4___default.a,
     alt: "prime app landing",
+    height: 90,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
+      columnNumber: 15
+    }
+  }), __jsx("h2", {
+    className: "logo-text",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 15
+    }
+  }, "CRYSTAL ETH"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "https://moralis.io/hackathon/",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 11
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 13
+    }
+  }, __jsx("img", {
+    src: _assets_images_moralis_svg__WEBPACK_IMPORTED_MODULE_5___default.a,
+    alt: "moralis",
+    height: 60,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
       columnNumber: 15
     }
   }))), __jsx("nav", {
@@ -26502,7 +26235,7 @@ const Navigation = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 51,
       columnNumber: 11
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaBars"], {
@@ -26511,16 +26244,16 @@ const Navigation = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 52,
       columnNumber: 13
     }
-  }), __jsx(_utility_ScrollspyMenu__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_utility_ScrollspyMenu__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: `collapsed ${expand ? "is-expanded" : ""}`,
-    menuItems: _utility_data_js__WEBPACK_IMPORTED_MODULE_5__["default"].menuItems,
+    menuItems: _utility_data_js__WEBPACK_IMPORTED_MODULE_6__["default"].menuItems,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 56,
       columnNumber: 13
     }
   })))));
@@ -26544,7 +26277,7 @@ __webpack_require__.r(__webpack_exports__);
 const NavigationWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header.withConfig({
   displayName: "navigationstyle__NavigationWrap",
   componentId: "sc-1llh5hp-0"
-})(["background:", ";position:fixed;width:100%;z-index:9999;top:0;transition:all 0.3s ease 0s;border-bottom:1px solid transparent;.navbar-wrap{width:100%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #6A598E;}.mobile-menu-icon{display:none;color:#1D316C;font-size:24px;}.nav__button{width:170px;height:60px;background:", ";border-radius:5px;font-size:18px;color:", ";transition:all 0.3s ease-in;&:hover,&:focus{outline:none;border:none;background:linear-gradient( 93deg,rgba(196,56,231,1) 0%,rgba(122,49,222,1) 52%,rgba(37,42,213,1) 100% );color:", ";}}.dropdown{background:#fff;visibility:hidden;opacity:0;min-width:200px;border:1px solid #f5f5f5;position:absolute;margin-top:1rem;left:20px;padding:15px 0px;display:none;box-shadow:0px 30px 70px 0px rgba(137,139,142,0.15);-webkit-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);transition:all 0.3s ease-in-out;}ul li:hover > ul,ul li ul:hover{opacity:1;visibility:visible;-webkit-transform:translateY(0px);-ms-transform:translateY(0px);transform:translateY(0px);display:block;}nav{ul{margin:0;padding:0;list-style:none;display:flex;align-items:center;}li{position:relative;padding:28px 0px 28px 40px;.dropdown{li{padding:0;a{color:#1D316C;display:block;padding:5px 15px;&:hover{color:", " !important;}&:before{content:none;}}}}a,.nav-active{position:relative;color:#fff;font-size:15px;transition:450ms all;padding-bottom:5px;cursor:pointer;&:before{content:'';position:absolute;left:0;bottom:0;width:20px;height:1px;opacity:0;background:", ";transition:450ms all;}&:hover{color:", ";&:before{opacity:1;}}}}}.logo{margin-top:8px;transition:all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;img{width:135px;}}&.scrolled{box-shadow:rgba(0,0,0,0.05) 0px 10px 30px;background:#290E59;border-color:", ";.navbar-wrap{border-color:transparent}.logo{width:100px;}.nav{li{padding:14px 0px 14px 40px;a{&:hover{color:", ";}}}li{.dropdown{li{padding:0;}}}}}@media only screen and (max-width:912px){height:auto;min-height:50px;padding:15px 20px;background:#290E59;&.scrolled{padding:8px 20px;border-color:transparent;.nav .collapsed{li{padding:0;a{padding:8px 10px;display:block;}}li+li{padding-left:0;}}}.has-dropdown{a{position:relative;&:before{content:'';}}}.dropdown{position:relative;left:0;margin-top:0;box-shadow:none;}.navbar-wrap{border-color:transparent;display:block;position:relative;}.logo{width:100%;display:block;margin:7px 0 0 0;img{width:110px;}}.mobile-menu-icon{display:inline-block;position:absolute;top:8px;right:3px;cursor:pointer;}.nav{width:100%;.mobile-menu-icon{color:white;}.collapsed{width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;transition:450ms all ease-in-out;overflow:hidden;max-height:0;&.is-expanded{padding-top:15px;overflow-y:auto;max-height:250px;}li{padding:0;margin:0px 0px;width:100%;.dropdown{li{a{color:#1D316C;}}}a{padding:8px 10px;display:block;color:white;&:before{content:none;}}}}}}"], props => props.theme.NavBG, props => props.theme.white, props => props.theme.linkColor, props => props.theme.white, props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.NavBGSolid, props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5');
+})(["background:", ";position:fixed;width:100%;z-index:9999;top:0;transition:all 0.3s ease 0s;border-bottom:1px solid transparent;.navbar-wrap{width:100%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #6A598E;}.mobile-menu-icon{display:none;color:#1D316C;font-size:24px;}.logo-text{float:right;font-weight:100;line-height:50px;}.nav__button{width:170px;height:60px;background:", ";border-radius:5px;font-size:18px;color:", ";transition:all 0.3s ease-in;&:hover,&:focus{outline:none;border:none;background:linear-gradient( 93deg,rgba(196,56,231,1) 0%,rgba(122,49,222,1) 52%,rgba(37,42,213,1) 100% );color:", ";}}.dropdown{background:#fff;visibility:hidden;opacity:0;min-width:200px;border:1px solid #f5f5f5;position:absolute;margin-top:1rem;left:20px;padding:15px 0px;display:none;box-shadow:0px 30px 70px 0px rgba(137,139,142,0.15);-webkit-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);transition:all 0.3s ease-in-out;}ul li:hover > ul,ul li ul:hover{opacity:1;visibility:visible;-webkit-transform:translateY(0px);-ms-transform:translateY(0px);transform:translateY(0px);display:block;}nav{ul{margin:0;padding:0;list-style:none;display:flex;align-items:center;}li{position:relative;padding:28px 0px 28px 40px;.dropdown{li{padding:0;a{color:#1D316C;display:block;padding:5px 15px;&:hover{color:", " !important;}&:before{content:none;}}}}a,.nav-active{position:relative;color:#fff;font-size:15px;transition:450ms all;padding-bottom:5px;cursor:pointer;&:before{content:'';position:absolute;left:0;bottom:0;width:20px;height:1px;opacity:0;background:", ";transition:450ms all;}&:hover{color:", ";&:before{opacity:1;}}}}}.logo{margin-top:8px;transition:all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;img{width:135px;}}&.scrolled{box-shadow:rgba(0,0,0,0.05) 0px 10px 30px;background:#290E59;border-color:", ";.navbar-wrap{border-color:transparent}.logo{width:100px;}.nav{li{padding:14px 0px 14px 40px;a{&:hover{color:", ";}}}li{.dropdown{li{padding:0;}}}}}@media only screen and (max-width:912px){height:auto;min-height:50px;padding:15px 20px;background:#290E59;&.scrolled{padding:8px 20px;border-color:transparent;.nav .collapsed{li{padding:0;a{padding:8px 10px;display:block;}}li+li{padding-left:0;}}}.has-dropdown{a{position:relative;&:before{content:'';}}}.dropdown{position:relative;left:0;margin-top:0;box-shadow:none;}.navbar-wrap{border-color:transparent;display:block;position:relative;}.logo{width:100%;display:block;margin:7px 0 0 0;img{width:110px;}}.mobile-menu-icon{display:inline-block;position:absolute;top:8px;right:3px;cursor:pointer;}.nav{width:100%;.mobile-menu-icon{color:white;}.collapsed{width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;transition:450ms all ease-in-out;overflow:hidden;max-height:0;&.is-expanded{padding-top:15px;overflow-y:auto;max-height:250px;}li{padding:0;margin:0px 0px;width:100%;.dropdown{li{a{color:#1D316C;}}}a{padding:8px 10px;display:block;color:white;&:before{content:none;}}}}}}"], props => props.theme.NavBG, props => props.theme.white, props => props.theme.linkColor, props => props.theme.white, props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5', props => props.theme.NavBGSolid, props => props.theme.menuHoverColor ? props.theme.menuHoverColor : '#1F2AD5');
 /* harmony default export */ __webpack_exports__["default"] = (NavigationWrap);
 
 /***/ }),
@@ -26566,7 +26299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Navigation/utility/ScrollspyMenu.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Navigation/utility/ScrollspyMenu.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -26647,10 +26380,33 @@ const ScrollspyMenu = _ref => {
       columnNumber: 23
     }
   }, subItem.name))))))), __jsx("li", {
+    key: 100,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42,
+      columnNumber: 7
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "https://github.com/gianksp/crystaleth-app",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 11
+    }
+  }, "Github"))), __jsx("li", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, __jsx("button", {
@@ -26659,7 +26415,7 @@ const ScrollspyMenu = _ref => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 48,
       columnNumber: 9
     }
   }, "App")));
@@ -26679,80 +26435,71 @@ const ScrollspyMenu = _ref => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const Data = {
-  menuItems: [{
-    name: "Platform",
-    path: "/"
-  }, {
-    name: "Documentation",
-    path: "/documentation"
-  }, {
-    name: "Team",
-    path: "/team"
-  } // {
-  //   name: "Home",
-  //   path: "/",
-  //   subItems: [
-  //     {
-  //       name: "Home Two",
-  //       path: "/home-two"
-  //     },
-  //     {
-  //       name: "Home Three",
-  //       path: "/home-three"
-  //     },
-  //     {
-  //       name: "Home Slider",
-  //       path: "/home-slider"
-  //     }
-  //   ]
-  // },
-  // {
-  //   name: "About",
-  //   path: "about",
-  //   offset: "-100"
-  // },
-  // {
-  //   name: "Service",
-  //   path: "service",
-  //   offset: "-120"
-  // },
-  // {
-  //   name: "Token",
-  //   path: "token",
-  //   offset: "-100"
-  // },
-  // {
-  //   name: "Pages",
-  //   path: "/blog-grid",
-  //   subItems: [
-  //     {
-  //       name: "Blog Grid",
-  //       path: "/blog-grid"
-  //     },
-  //     {
-  //       name: "Blog List",
-  //       path: "/blog-list"
-  //     },
-  //     {
-  //       name: "Blog Full",
-  //       path: "/blog-full"
-  //     },
-  //     {
-  //       name: "Blog Single",
-  //       path: "/blog-single"
-  //     }
-  //   ]
-  // },
-  // {
-  //   name: "FAQ",
-  //   path: "faq",
-  //   offset: "-60"
-  // },
-  // {
-  //   name: "Contact",
-  //   path: "contact",
-  //   offset: "-70"
-  // }
+  menuItems: [// {
+    //   name: "Home",
+    //   path: "/",
+    //   subItems: [
+    //     {
+    //       name: "Home Two",
+    //       path: "/home-two"
+    //     },
+    //     {
+    //       name: "Home Three",
+    //       path: "/home-three"
+    //     },
+    //     {
+    //       name: "Home Slider",
+    //       path: "/home-slider"
+    //     }
+    //   ]
+    // },
+    // {
+    //   name: "About",
+    //   path: "about",
+    //   offset: "-100"
+    // },
+    // {
+    //   name: "Service",
+    //   path: "service",
+    //   offset: "-120"
+    // },
+    // {
+    //   name: "Token",
+    //   path: "token",
+    //   offset: "-100"
+    // },
+    // {
+    //   name: "Pages",
+    //   path: "/blog-grid",
+    //   subItems: [
+    //     {
+    //       name: "Blog Grid",
+    //       path: "/blog-grid"
+    //     },
+    //     {
+    //       name: "Blog List",
+    //       path: "/blog-list"
+    //     },
+    //     {
+    //       name: "Blog Full",
+    //       path: "/blog-full"
+    //     },
+    //     {
+    //       name: "Blog Single",
+    //       path: "/blog-single"
+    //     }
+    //   ]
+    // },
+    // {
+    //   name: "FAQ",
+    //   path: "faq",
+    //   offset: "-60"
+    // },
+    // {
+    //   name: "Contact",
+    //   path: "contact",
+    //   offset: "-70"
+    // }
   ]
 };
 /* harmony default export */ __webpack_exports__["default"] = (Data);
@@ -26777,7 +26524,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../reusecore/Image */ "./src/reusecore/Image/index.js");
 /* harmony import */ var _assets_data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/data/service */ "./src/assets/data/service/index.js");
 /* harmony import */ var _service_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./service.style */ "./src/sections/Service/service.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Service/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Service/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -26922,7 +26669,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../reusecore/Image */ "./src/reusecore/Image/index.js");
 /* harmony import */ var _assets_data_stack__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/data/stack */ "./src/assets/data/stack/index.js");
 /* harmony import */ var _stack_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./stack.style */ "./src/sections/Stack/stack.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Stack/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Stack/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -26987,18 +26734,18 @@ const Stack = () => {
       lineNumber: 22,
       columnNumber: 17
     }
-  }, " Technology we use"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, " Technologies we use"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
       columnNumber: 17
     }
-  }, "Attention in when in just something bread not hundred well, muff value emerge on the known officers.")))), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+  }, "Core technologies that power our protocol.")))), __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 11
     }
   }, __jsx(_reusecore_Layout__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -27006,7 +26753,7 @@ const Stack = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, __jsx(_reusecore_Box__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -27014,7 +26761,7 @@ const Stack = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 15
     }
   }, _assets_data_stack__WEBPACK_IMPORTED_MODULE_8__["default"].stack.map((item, index) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -27023,23 +26770,25 @@ const Stack = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 33,
       columnNumber: 19
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 21
     }
   }, __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
     src: item.imageSrc,
     alt: item.name,
+    height: 90,
+    className: "image-tech",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 23
     }
   }))))))))));
@@ -27063,7 +26812,7 @@ __webpack_require__.r(__webpack_exports__);
 const StackSectionWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "stackstyle__StackSectionWrapper",
   componentId: "sc-1nsa9vl-0"
-})(["padding:85px 0;.Stack-Wrapper{.title__wrapper{text-align:center;}.language-image{display:flex;margin-top:45px;justify-content:space-between;a{&:hover{opacity:0.7;}img{width:auto;}}}}@media only screen and (max-width:568px){.box.language-image a img{width:85%;}}@media only screen and (max-width:480px){padding:20px 0;.box.language-image a img{width:70%;}.heading{font-size:33px;line-height:40px;}}@media only screen and (max-width:375px){.heading{font-size:28px;line-height:35px;}}"]);
+})(["padding:85px 0;.Stack-Wrapper{.title__wrapper{text-align:center;}.language-image{display:flex;margin-top:45px;justify-content:space-between;a{&:hover{opacity:0.7;}img{width:auto;}}}}.image-tech{max-height:150px;}@media only screen and (max-width:568px){.box.language-image a img{width:85%;}}@media only screen and (max-width:480px){padding:20px 0;.box.language-image a img{width:70%;}.heading{font-size:33px;line-height:40px;}}@media only screen and (max-width:375px){.heading{font-size:28px;line-height:35px;}}"]);
 /* harmony default export */ __webpack_exports__["default"] = (StackSectionWrapper);
 
 /***/ }),
@@ -27084,12 +26833,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reusecore/Box */ "./src/reusecore/Box/index.js");
 /* harmony import */ var _reusecore_Heading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../reusecore/Heading */ "./src/reusecore/Heading/index.js");
 /* harmony import */ var _reusecore_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../reusecore/Image */ "./src/reusecore/Image/index.js");
-/* harmony import */ var _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/images/token-chart-1.png */ "./src/assets/images/token-chart-1.png");
-/* harmony import */ var _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/images/token-chart-2.png */ "./src/assets/images/token-chart-2.png");
-/* harmony import */ var _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _statistics_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./statistics.style */ "./src/sections/Statistics/statistics.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Statistics/index.js";
+/* harmony import */ var _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/images/token-chart-1.png */ "./src/assets/images/token-chart-1.png");
+/* harmony import */ var _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/images/token-chart-2.png */ "./src/assets/images/token-chart-2.png");
+/* harmony import */ var _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _statistics_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./statistics.style */ "./src/sections/Statistics/statistics.style.js");
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Statistics/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -27102,7 +26851,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Statistics = () => {
-  return __jsx(_statistics_style__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return __jsx(_statistics_style__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -27156,7 +26905,7 @@ const Statistics = () => {
       columnNumber: 17
     }
   }, "Funds Allocation"), __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    src: _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+    src: _assets_images_token_chart_1_png__WEBPACK_IMPORTED_MODULE_6___default.a,
     alt: "cryptic statistics image",
     __self: undefined,
     __source: {
@@ -27189,7 +26938,7 @@ const Statistics = () => {
       columnNumber: 17
     }
   }, "Token Distribution"), __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    src: _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+    src: _assets_images_token_chart_2_png__WEBPACK_IMPORTED_MODULE_7___default.a,
     alt: "cryptic statistics image",
     __self: undefined,
     __source: {
@@ -27242,7 +26991,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Form_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reusecore/Form/Input */ "./src/reusecore/Form/Input/index.js");
 /* harmony import */ var _reusecore_SectionTitle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../reusecore/SectionTitle */ "./src/reusecore/SectionTitle/index.js");
 /* harmony import */ var _subscribe_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./subscribe.style */ "./src/sections/Subscribe/subscribe.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Subscribe/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Subscribe/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -27411,10 +27160,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reusecore_Heading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../reusecore/Heading */ "./src/reusecore/Heading/index.js");
 /* harmony import */ var _reusecore_Text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../reusecore/Text */ "./src/reusecore/Text/index.js");
 /* harmony import */ var _reusecore_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reusecore/Image */ "./src/reusecore/Image/index.js");
-/* harmony import */ var _assets_images_users_map_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/images/users-map.png */ "./src/assets/images/users-map.png");
-/* harmony import */ var _assets_images_users_map_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_images_users_map_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _assets_images_diagram_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/images/diagram.svg */ "./src/assets/images/diagram.svg");
+/* harmony import */ var _assets_images_diagram_svg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_images_diagram_svg__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _userMap_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./userMap.style */ "./src/sections/UserMap/userMap.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/UserMap/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/UserMap/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -27480,7 +27229,7 @@ const UserMap = () => {
       lineNumber: 21,
       columnNumber: 17
     }
-  }, "More than 3 Bilion worldwide use"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "How it works"), __jsx(_reusecore_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -27511,7 +27260,7 @@ const UserMap = () => {
       columnNumber: 15
     }
   }, __jsx(_reusecore_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    src: _assets_images_users_map_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+    src: _assets_images_diagram_svg__WEBPACK_IMPORTED_MODULE_7___default.a,
     alt: "cryptik user map",
     __self: undefined,
     __source: {
@@ -27569,7 +27318,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_particles_crypto_managment_wallet_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_images_particles_crypto_managment_wallet_svg__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _assets_data_wallet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/data/wallet */ "./src/assets/data/wallet/index.js");
 /* harmony import */ var _wallet_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wallet.style */ "./src/sections/Wallet/wallet.style.js");
-var _jsxFileName = "/Users/giancarlosanchez/Desktop/CETH/LandingTemplate/src/sections/Wallet/index.js";
+var _jsxFileName = "/Users/giancarlosanchez/Desktop/crystaleth-landing/src/sections/Wallet/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -27745,13 +27494,13 @@ const WalletSectionWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
 /***/ }),
 
 /***/ 1:
-/*!**************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2FCETH%2FLandingTemplate%2Fpages%2Findex.js ***!
-  \**************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2Fcrystaleth-landing%2Fpages%2Findex.js ***!
+  \**********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2FCETH%2FLandingTemplate%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2FCETH%2FLandingTemplate%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2Fcrystaleth-landing%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgiancarlosanchez%2FDesktop%2Fcrystaleth-landing%2Fpages%2Findex.js!./");
 
 
 /***/ }),

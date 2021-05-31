@@ -35,13 +35,9 @@ const Home = () => {
       <Service />
       <CoinFund />
       <About />
-      <Awards />
       <UserMap />
-      <Wallet />
-      <Statistics />
-       <Faq />
+
       <Stack />
-      <Footer />
     </ThemeProvider>
   );
 };

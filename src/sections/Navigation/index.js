@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import { Container } from "reusecore/Layout";
-import logo from "assets/images/logo-white.png";
-
+import logo from "assets/images/icon_crystal.svg";
+import moralis from "assets/images/moralis.svg";
 import Data from "./utility/data.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu";
 import NavigationWrap from "./navigation.style";
+
 
 const Navigation = () => {
   const [expand, setExpand] = useState(false);
@@ -38,7 +39,13 @@ const Navigation = () => {
         <div className="navbar-wrap">
           <Link href="/">
             <a className="logo">
-              <img src={logo} alt="prime app landing" />
+              <img src={logo} alt="prime app landing" height={90}/>
+              <h2 className="logo-text">CRYSTAL ETH</h2>
+            </a>
+          </Link>
+          <Link href="https://moralis.io/hackathon/">
+            <a>
+              <img src={moralis} alt="moralis" height={60}/>
             </a>
           </Link>
           <nav className="nav">

@@ -20,6 +20,11 @@ const NavigationWrap =  styled.header`
     color: #1D316C;
     font-size: 24px;
   }
+  .logo-text {
+    float:right;
+    font-weight:100;
+    line-height:50px;
+  }
   .nav__button{
     width: 170px;
     height: 60px;

@@ -41,26 +41,24 @@ const CoinFund = () => {
               <SectionTitle>
                 <SectionBackground>
                   <Heading>
-                    Powering Data for the new equity blockchain.
+                     Fully Open Source
                   </Heading>
                 </SectionBackground>
                 <Text>
-                  The highly the not having with lively. Our up with ran go her
-                  it gloomy the back, though however projected not for six with
-                  then, trusted as concepts belt.
+                  Leverage the set of smart contracts & app and deploy your own modularized investment and yield distribution platform.
                 </Text>
               </SectionTitle>
 
               <Box className="btn-wrapper">
-                <Link href="#">
-                  <a className="btn btn-fill">Buy Token</a>
+                <Link href="https://github.com/gianksp/crystaleth-app">
+                  <a className="btn btn-fill">Source code</a>
                 </Link>
               </Box>
             </Box>
           </Col>
           <Col className="lg-6 md-12 countdown-wrap">
             <Box className="countdown-wrapper">
-              <Text> Last moment to grab the token </Text>
+              <Text> Next prize pool distribution in </Text>
               <CountdownTimer {...settings} />
             </Box>
             <Box className="progressbar-wrapper">
@@ -70,24 +68,6 @@ const CoinFund = () => {
               <Text as="span">$11,931</Text>
             </Box>
 
-            <Box className="payment-getway">
-              <Text as="span">
-                {" "}
-                <FaBitcoin />{" "}
-              </Text>
-              <Text as="span">
-                {" "}
-                <FaCcMastercard />{" "}
-              </Text>
-              <Text as="span">
-                {" "}
-                <FaCcVisa />{" "}
-              </Text>
-              <Text as="span">
-                {" "}
-                <FaCcDiscover />{" "}
-              </Text>
-            </Box>
           </Col>
         </Row>
       </Container>
