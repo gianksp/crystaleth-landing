@@ -40,7 +40,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         </li>
       ))}
       <li key={100}>
-        <Link href='https://github.com/gianksp/crystaleth-app'>
+        <Link href='https://github.com/gianksp/crystaleth-app' target="_blank">
           <a>Github</a>
         </Link>
       </li>

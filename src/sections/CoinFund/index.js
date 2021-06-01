@@ -50,7 +50,7 @@ const CoinFund = () => {
               </SectionTitle>
 
               <Box className="btn-wrapper">
-                <Link href="https://github.com/gianksp/crystaleth-app">
+                <Link href="https://github.com/gianksp/crystaleth-app" target="_blank">
                   <a className="btn btn-fill">Source code</a>
                 </Link>
               </Box>
